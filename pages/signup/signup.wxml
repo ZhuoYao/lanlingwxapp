@@ -1,0 +1,5 @@
+<!--pages/ signup/signup.wxml-->
+<view>
+<text>pages/recruit/sign.wxml</text>
+<bottom-nav nav-index='0'></bottom-nav>
+</view>

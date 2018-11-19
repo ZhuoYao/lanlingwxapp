@@ -1,0 +1,22 @@
+<!--pages/index1/main.wxml-->
+<view class='index-main'>
+  <view>
+  <swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{swiperdata}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='category'>
+  <view><text class="{{categoryindex == 0?'cgactive':''}}">人社类</text><view class="{{categoryindex == 0?'categoryactive':''}}"></view></view>
+  <view><text class="{{categoryindex == 1?'cgactive':''}}">交通类</text><view class="{{categoryindex == 1?'categoryactive':''}}"></view></view>
+  <view><text class="{{categoryindex == 2?'cgactive':''}}">安监类</text><view class="{{categoryindex == 2?'categoryactive':''}}"></view></view>
+</view>
+<view class='subject'>
+  <view>科目</view>
+</view>
+</view>
+<bottom-nav nav-index='1'></bottom-nav>
+</view>

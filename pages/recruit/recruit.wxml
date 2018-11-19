@@ -1,0 +1,5 @@
+<!--pages/recruit/recruit.wxml-->
+<view>
+<text>pages/recruit/recruit.wxml</text>
+<bottom-nav nav-index='2'></bottom-nav>
+</view>

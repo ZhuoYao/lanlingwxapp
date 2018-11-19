@@ -1,0 +1,24 @@
+<!--pages/bottomnav/bottomnav.wxml-->
+<view class='bottom-nav'>
+   <view  class="bottom-nav-bottom {{navIndex == 0?'active':''}}" bindtap='gopage' data-index='0'>
+   <view wx:if="{{navIndex == 0}}"><image src="../../img/baoming.png" mode="widthFix"></image></view>
+   <view wx:else><image src="../../img/nobaoming.png" mode="widthFix"></image></view>
+   <text>报名</text>
+   </view>
+   <view  class="bottom-nav-bottom {{navIndex == 1?'active':''}}" bindtap='gopage' data-index='1'>
+   <view wx:if="{{navIndex == 1}}"><image src="../../img/lianxi.png" mode="widthFix"></image></view>
+   <view wx:else><image src="../../img/nolianxi.png" mode="widthFix"></image></view>
+   <text>练习</text>
+   </view>
+   <view  class="bottom-nav-bottom {{navIndex == 2?'active':''}}" bindtap='gopage' data-index='2'>
+   <view wx:if="{{navIndex == 2}}"><image src="../../img/zhaopin.png" mode="widthFix"></image></view>
+   <view wx:else><image src="../../img/nozhaopin.png" mode="widthFix"></image></view>
+   <text>招聘</text>
+   </view>
+   <view  class="bottom-nav-bottom {{navIndex == 3?'active':''}}" bindtap='gopage' data-index='3'>
+   <view wx:if="{{navIndex == 3}}"><image src="../../img/wode.png" mode="widthFix"></image></view>
+   <view wx:else><image src="../../img/nowode.png" mode="widthFix"></image></view>
+   <text>我的</text>
+   </view>
+</view>
+

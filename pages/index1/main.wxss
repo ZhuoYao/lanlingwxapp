@@ -1,0 +1,37 @@
+/* pages/index1/main.wxss */
+.index-main{
+  width: 100%;
+  height: auto;
+}
+swiper-item .slide-image{
+  width: 100%;
+  height: 330rpx;
+}
+.category{
+  width: 100%;
+  height: 82rpx;
+  display: flex;
+}
+.category > view{
+    width: 33.33%;
+    height: 100%;
+    text-align: center;
+    line-height: 82rpx;
+    font-size: 28rpx;
+}
+.category > view > .categoryactive{
+  margin: 0 auto;
+  top: -3rpx;
+  position: relative;
+  width: 76rpx;
+  height: 3rpx;
+  background-color: #358AFF;
+}
+.cgactive{
+  color: #358AFF;
+}
+.subject{
+    width: 100%;
+    height: 83rpx;
+    font-size: 26rpx;
+}

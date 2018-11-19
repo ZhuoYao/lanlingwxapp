@@ -1,0 +1,30 @@
+/* pages/bottomnav/bottomnav.wxss */
+.bottom-nav{
+  width: 100%;
+  height: 98rpx;
+  position: fixed;
+  top: 100%;
+  margin-top: -98rpx;
+}
+.bottom-nav .bottom-nav-bottom{
+  display: block;
+  width: 25%;
+  float: left;
+  text-align: center;
+  font-size: 20rpx;
+  overflow: hidden;
+}
+.bottom-nav .bottom-nav-bottom > view{
+  margin: 0 auto;
+  width: 48rpx;
+  height: 42rpx;
+  margin-top: 14rpx;
+  margin-bottom: 10rpx;
+}
+.bottom-nav .bottom-nav-bottom > view > image{
+  width: 100%;
+  height: 43rpx;
+}
+.active{
+  color: RGBA(130, 201, 216,1);
+}

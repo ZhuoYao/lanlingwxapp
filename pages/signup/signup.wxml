@@ -1,5 +1,60 @@
 <!--pages/ signup/signup.wxml-->
 <view>
-<text>pages/recruit/sign.wxml</text>
+<view class='searchbox'>
+   <view class='searchbox-city' bindtap='changecity'>
+      <text>{{cityname}}</text>
+      <image src='../../img/downarrow.png' mode='widthFix'></image>
+   </view>
+   <view class='search' bindtap='chooseshool'>
+      <image src='../../img/search.png'></image>
+      输入学校
+   </view>
+   <view class='tips' bindtap='gonotice'>
+   须知
+   </view>
+</view>
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{swiperdata}}" wx:key="item">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+  <view class='sign-up' bindtap='gosignup'></view>
+  <view class='school' id="school">
+  <view class='screen {{menufix?"menufix":""}}' bindtap='showchoosetype'><view>更多</view> <image src='../../img/arrow.png' mode='widthFix'></image> </view>
+   <!-- <wux-rater slot="footer" default-value="{{ 3.7 }}" fontSize="{{20}}" disabled /> -->
+    <view wx:for="{{schoollist}}" wx:key="item" class='schoollist' bindtap='goschooldetail'>
+      <view><image src='{{item.schoolLogo}}'></image></view>
+      <view>
+       <view>{{item.schoolName}}</view>
+       <view><wux-rater slot="footer" default-value="{{item.star}}" fontSize="{{18}}" disabled /></view>
+       <view>¥{{item.price}}</view>
+      </view>
+      <view> <image src='../../img/arrow.png' mode='widthFix'></image> </view>
+    </view>
+  </view>
+  <view class='mask {{maskshow?"maskshow":""}}' catchtouchmove="move" bindtap='hidemask'>
+    <view class='moretype' catchtap='notapfather'>
+          <view class='choosetype'>
+          <view catchtap='changetype' data-id="0"><view class='{{alltype?"ischoose":""}}'>综合</view></view>
+          <view catchtap='changetype' data-id="1"><view class='{{distance?"ischoose":""}}'>距离</view><view class='sanjiao'><view class='sanjiaotop {{distance == "1"?"ischoose1":""}}'></view><view class='sanjiaobotoom  {{distance == "2"?"ischoose2":""}}'></view></view></view>
+          <view catchtap='changetype' data-id="2"><view class='{{priced?"ischoose":""}}'>价格</view><view class='sanjiao'><view class='sanjiaotop {{ priced== "1"?"ischoose1":""}}'></view><view class='sanjiaobotoom {{ priced== "2"?"ischoose2":""}}'></view></view></view>
+          <view catchtap='changetype' data-id="3"><view class='{{evaluate?"ischoose":""}}'>评价</view><view class='sanjiao'><view class='sanjiaotop {{ evaluate== "1"?"ischoose1":""}}'></view><view class='sanjiaobotoom {{ evaluate== "2"?"ischoose2":""}}'></view></view></view>
+           <view catchtap='changetype' data-id="4"><view>筛选</view><image src='../../img/screen.png' mode='widthFix'></image></view>
+          </view>
+          <view class='kind {{screen?"screenshow":""}}'>
+          <view>类别</view>
+          <view>
+            <view class='{{categoryindex == "1"?"ischoose3":""}}' catchtap='changekind' data-id="1">人社类</view><view class='{{categoryindex == "2"?"ischoose3":""}}' catchtap='changekind' data-id="2">交通类</view><view class='{{categoryindex == "3"?"ischoose3":""}}' catchtap='changekind' data-id="3">安监类</view>
+          </view>
+          </view>
+          <view class='surebotton'>
+          <view>重置</view>
+          <view>确定</view>
+          </view>
+    </view>
+  </view>
 <bottom-nav nav-index='0'></bottom-nav>
 </view>

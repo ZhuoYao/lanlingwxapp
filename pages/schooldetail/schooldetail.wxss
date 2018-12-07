@@ -1,0 +1,201 @@
+/* pages/schooldetail/schooldetail.wxss */
+
+page {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.schooldetail {
+  width: 100%;
+  height: calc(100% - 100rpx);
+  overflow-y: auto;
+}
+
+.imgbox {
+  width: 100%;
+  height: 400rpx;
+  position: relative;
+}
+
+.imgbox > image {
+  width: 100%;
+  height: 100%;
+}
+
+.imgbox >view {
+  width: 90rpx;
+  height: 48rpx;
+  background-color: rgba(51, 51, 51, 1);
+  color: white;
+  font-size: 24rpx;
+  line-height: 48rpx;
+  border-radius: 20rpx;
+  opacity: 0.7;
+  position: absolute;
+  top: 17rpx;
+  left: calc(100% - 120rpx);
+  text-align: center;
+}
+
+.school-name {
+  padding-left: 48rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-weight: 600;
+  font-size: 32rpx;
+  border-bottom: 3rpx solid 	#F5F5F5;
+}
+
+.location ,.jianjie, .star ,.showclass{
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  display: flex;
+  font-size: 26rpx;
+  overflow: hidden;
+  border-bottom: 3rpx solid 	#F5F5F5;
+}
+
+.location >image:nth-child(1) {
+  width: 30rpx;
+  margin-left: 48rpx;
+  margin-top: 22rpx;
+}
+
+.location >view:nth-child(2) , .jianjie>view:nth-child(1) ,.showclass >view:nth-child(1){
+  flex: 1;
+  margin-left: 16rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.jianjie>view:nth-child(1), .star >view:nth-child(1), .showclass>view:nth-child(1){
+  margin-left: 48rpx;
+}
+.star >text{
+  margin-left: 20rpx;
+  color: #AFAFAF;
+  line-height: 95rpx;
+}
+.star >view:nth-child(3){
+  flex: 1;
+  text-align: right;
+}
+.location >text:nth-child(3) , .jianjie >text:nth-child(2) , .showclass >text:nth-child(2){
+  margin-left: 50rpx;
+}
+.location >image:nth-child(4),.jianjie >image:nth-child(3), .star >image ,.showclass >image:nth-child(3){
+  margin-right: 29rpx;
+  margin-left: 10rpx;
+  margin-top: 29rpx;
+  width: 35rpx;
+}
+.allclass{
+  padding: 0 29rpx 0 51rpx;
+}
+.allclass>view{
+  display: flex;
+  width: 100%;
+  height: 73rpx;
+  overflow: hidden;
+}
+.allclass>view >view:nth-child(1){
+  width: 90rpx;
+  height: 34rpx;
+  margin-top: 18.5rpx;
+  line-height: 34rpx;
+  border: 1rpx solid;
+  border-color: #358AFF;
+  border-radius: 18rpx;
+  font-size: 22rpx;
+  text-align: center;
+  color: #358AFF;
+}
+.allclass>view >view:nth-child(2){
+  flex: 1;
+  font-size: 22rpx;
+  line-height: 73rpx;
+  color: #666666;
+  margin-left: 11rpx;
+}
+.allclass>view >text:nth-child(3){
+  color: #358AFF;
+  font-size: 22rpx;
+  line-height: 73rpx;
+}
+.allclass>view >text:nth-child(4){
+  font-size: 28rpx;
+  line-height: 73rpx;
+  color: #358AFF;
+}
+.allclass>view >image:nth-child(5){
+  margin-top: 18rpx;
+  margin-left: 100rpx;
+  margin-right: 5rpx;
+  width: 25rpx;
+}
+.classtype1{
+  color: #1ECE47 !important;
+  border-color: #1ECE47 !important;
+}
+.classtype2{
+  color: #FF9A54 !important;
+  border-color: #FF9A54 !important;
+}
+.consultation{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background-color: #358AFF;
+  font-size: 30rpx;
+  color: white;
+}
+.mask{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(127, 127, 127, .7);
+  display: none;
+}
+.maskshow{
+  display: block !important;
+}
+.mask >view{
+  width: 500rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 30rpx;
+  overflow: hidden;
+  background-color: white;
+}
+.mask >view >view:nth-child(1){
+  width: 100%;
+  height: 150rpx;
+  line-height: 150rpx;
+  font-size: 32rpx;
+  text-align: center;
+  border-bottom: 2rpx solid grey;
+}
+.mask >view >view:nth-child(2){
+  display: flex;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #358AFF;
+}
+.mask >view >view:nth-child(2) >view:first-child{
+  width: 249rpx;
+  border-right: 2rpx solid grey;
+}
+.mask >view >view:nth-child(2) >view:last-child{
+  flex: 1;
+  font-weight: 600;
+}

@@ -1,0 +1,81 @@
+/* pages/examdata/examdata.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+page > image {
+  width: 100%;
+  height: 100%;
+}
+.examdata{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.examdata .scoreimg{
+  width: 366rpx;
+  height: 180rpx;
+  margin: 0 auto;
+  margin-top: 41rpx;
+}
+.examdata .scoreimg image{
+  width: 90%;
+  height: 100%;
+  margin-left: 5%;
+}
+.examdata .score{
+  text-align: center;
+  font-size: 43rpx;
+  color: white;
+  
+}
+.examdata .lastscore{
+  text-align: center;
+  font-size: 21rpx;
+  color: white;
+}
+.examdata .exdata-main{
+  width: 482rpx;
+  padding: 0 49rpx;
+  margin: 0 auto;
+  margin-top: 35rpx;
+  border-radius:30px;
+  background-color: rgba(255, 255, 255, .2);
+  color: white;  
+}
+.exdata-main-data{
+  display: flex;
+}
+.exdata-main-data view:first-child{
+  font-size: 28rpx;
+  line-height: 135rpx;
+  width: 130rpx;
+}
+.exdata-main-data view:last-child{
+  flex: 1;
+  font-size: 25rpx;
+  line-height: 135rpx;
+  text-align: right;
+}
+.exdata-action{
+  padding-top: 42rpx;
+  width: 512rpx;
+  font-size: 24rpx;
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+}
+.goexam{
+  margin: 0 auto;
+  margin-top: 100rpx;
+  width: 450rpx;
+  height: 88rpx;
+}
+.goexam image{
+  width: 100%;
+  height: 100%;
+}

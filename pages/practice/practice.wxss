@@ -1,0 +1,239 @@
+/* pages/practice/practice.wxss */
+
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.practice {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.practice-center {
+  overflow-y: auto;
+  max-height: calc(100% - 96rpx);
+}
+.practice-main {
+  margin: 0 auto;
+  margin-top: 52rpx;
+  width: 680rpx;
+  border-radius: 30rpx;
+  box-shadow: 2rpx 2rpx 15rpx 0rpx rgba(167, 167, 167, 0.5);
+}
+
+.practice-main .title-content {
+  padding: 36rpx 46rpx;
+  font-size: 36rpx;
+}
+
+.practice-main .xuanxiang {
+  width: 570rpx;
+  margin: 0 auto;
+}
+
+.practice-main .xuanxiang > view {
+  display: flex;
+  padding-bottom: 36rpx;
+}
+
+.practice-main .xuanxiang > view >view:nth-child(1) {
+  width: 51rpx;
+  height: 51rpx;
+  text-align: center;
+  font-size: 36rpx;
+  border-radius: 50%;
+  box-shadow: 0px 3px 13px 0px rgba(167, 167, 167, 0.46);
+  line-height: 52rpx;
+  overflow: hidden;
+}
+
+.practice-main .xuanxiang > view >view:nth-child(1) > image {
+  width: 51rpx;
+  height: 51rpx;
+}
+
+.practice-main .xuanxiang > view >view:nth-child(2) {
+  width: 490rpx;
+  word-break: break-all;
+  word-wrap: break-word;
+  margin-left: 29rpx;
+}
+
+.practice-main .answer {
+  padding: 44rpx 40rpx;
+  font-size: 30rpx;
+}
+.practice-menu{
+   position: absolute;
+   top: calc(100% - 98rpx);
+   width: 100%;
+   transition: all 0.5s;
+   z-index: 4;
+}
+.practice-menu-top {
+  height: 98rpx;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.5s;
+  z-index: 4;
+}
+
+.practice-menu-top-left {
+  width: 200rpx;
+  line-height: 96rpx;
+  font-size: 26rpx;
+  overflow: hidden;
+  display: flex;
+}
+
+.practice-menu-top-left image {
+  width: 46rpx;
+  height: 46rpx;
+  margin-left: 53rpx;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.practice-menu-top-left view {
+  line-height: 96rpx;
+}
+
+.practice-menu-top-right {
+  display: flex;
+  font-size: 28rpx;
+  line-height: 98rpx;
+}
+
+.practice-menu-top-right image {
+  width: 46rpx;
+  height: 46rpx;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.practice-menu-top-right view {
+  margin-right: 41rpx;
+  margin-left: 10rpx;
+  display: flex;
+}
+
+.practice-menu-top-right view:last-child {
+  margin-left: 0rpx;
+}
+
+.practice-menu-top-right view view {
+  margin-right: 0rpx;
+}
+
+.goshow {
+   transform: translateY(-580rpx);
+}
+.practice-munu-main {
+  width: 100%;
+  height: 582rpx;
+  position: absolute;
+  top: 100%;
+  transition: all 0.5s;
+  background-color: white;
+  margin-top: 0rpx;
+  z-index: 4;
+  overflow: hidden;
+}
+.goshow1 {
+  transform: translateY(-582rpx);
+}
+.maskbox{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: none;
+}
+.showmask{
+  display: block;
+}
+.practice-explain{
+  width: 680rpx;
+  margin: 0 auto;
+  box-shadow:2px 2px 15px 0px rgba(167,167,167,0.5);
+  border-radius:30px;
+  margin-top: 20rpx;
+}
+.practice-explain view:first-child{
+    padding: 38rpx 46rpx 35rpx 46rpx;
+    font-size: 32rpx;
+}
+.practice-explain view:last-child{
+  padding: 0rpx 60rpx 43rpx 45rpx;
+  font-size: 30rpx;
+}
+.practice-choose{
+  width: 680rpx;
+  margin: 0 auto;
+  margin-top: 24rpx;
+  display: flex;
+}
+.practice-choose view{
+  width: 338rpx;
+  height: 88rpx;
+  box-shadow:0px 3px 13px 0px rgba(167,167,167,0.46);
+  text-align: center;
+  line-height: 88rpx;
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+}
+.practice-choose view:first-child{
+  border-radius: 20rpx 0rpx 0rpx 20rpx;
+  margin-right: 3rpx;
+}
+.practice-choose view:last-child{
+  border-radius: 0 20rpx 20rpx 0;
+}
+.practice-choose .onlynext{
+  border-radius: 20rpx 20rpx 20rpx 20rpx !important;
+  width: 100%;
+  margin-right: 0rpx;
+}
+.practice-munu-main text{
+  padding: 28rpx 44rpx;
+  line-height: 82rpx;
+  font-size: 26rpx;
+}
+.practice-menu-main-num{
+   padding-left: 44rpx;
+   height: 400rpx;
+}
+.practice-menu-main-num scroll-view{
+    height: 400rpx;
+}
+.practice-menu-main-num scroll-view view{
+   width: 64rpx;
+   height: 64rpx;
+   border: 2rpx solid;
+   border-color: black;
+   border-radius: 50%;
+   margin-right: 33rpx;
+   margin-top: 25rpx;
+   float: left;
+   text-align: center;
+   line-height: 66rpx;
+   font-size: 32rpx;
+}
+.practice-menu-main-num .menutrue{
+    background-color: #358AFF;
+    border-color: #358AFF;
+    color: white;
+}
+.practice-menu-main-num .menuerror{
+    background-color: #ED6748;
+    border-color: #ED6748;
+    color: white;
+}

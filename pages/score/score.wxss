@@ -1,0 +1,84 @@
+/* pages/score/score.wxss */
+
+page {
+  width: 100%;
+  height: 100%;
+}
+.score{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left:0;
+}
+.score-top{
+  width: 100%;
+  height: 737rpx;
+  overflow: hidden;
+  background-color: black;
+}
+.score-top > view:first-child{
+    width: 406rpx;
+    height: 406rpx;
+    margin: 0 auto;
+    margin-top: 64rpx;
+    color: white;
+    position: relative;
+}
+.score-top  > view:first-child image{
+  width: 100%;
+  height: 100%;
+}
+.score-top >  view:first-child .scoredata{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    line-height: 406rpx;
+    text-align: center;
+    font-size: 150rpx;
+}
+.score-top view:first-child .scoredata text{
+    font-size: 40rpx;
+}
+.score-top .score-top-detail{
+  width: 500rpx;
+  margin: 0 auto;
+  margin-top: 100rpx;
+  display: flex;
+  color: white;
+}
+.score-top .score-top-detail .score-top-left{
+  width: 248rpx;
+  border-right: 2rpx solid white;
+  text-align: left;
+}
+.score-top .score-top-detail .score-top-left > view:first-child, .score-top .score-top-detail .score-top-right > view:first-child{
+  font-size: 40rpx;
+}
+.score-top .score-top-detail .score-top-left > view:last-child , .score-top .score-top-detail .score-top-right > view:last-child{
+  font-size: 28rpx;
+  padding-top: 15rpx;
+}
+.score-top .score-top-detail .score-top-right{
+  width: 248rpx;
+  border-left: 2rpx solid white;
+  text-align: right;
+}
+.score-bottom{
+  width: 100%;
+  height: calc(100% - 737rpx);
+}
+.score-bottom .score-zuijin{
+  height: 88rpx;
+  line-height: 88rpx;
+  padding-left: 58rpx;
+  padding-right: 40rpx;
+  font-size: 32rpx;
+}
+.score-bottom .score-zuijin image{
+   width: 25rpx;
+   height: 28rpx;
+   display: block;
+   float: right;
+   margin-top: 30rpx;
+}

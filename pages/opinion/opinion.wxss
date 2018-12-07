@@ -1,0 +1,69 @@
+/* pages/opinion/opinion.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+.opinion{
+  width: 100%;
+  height: 100%;
+  background-color: #F5F5F5;
+  overflow-y: auto;
+}
+.top-text{
+  line-height: 88rpx;
+  font-size: 32rpx;
+  padding-left: 40rpx;
+}
+.yijian{
+  width: 100%;
+  height: 300rpx;
+  background-color: white;
+  overflow: hidden;
+}
+.yijian >textarea{
+  width: 670rpx;
+  padding: 40rpx 40rpx 0 40rpx;
+  height: 220rpx;
+  font-size: 26rpx;
+}
+.yijian >view{
+  font-size: 26rpx;
+  color: #A5A5A5;
+  text-align: right;
+  padding-right: 33rpx;
+}
+.pushimg{
+  padding: 27rpx 33rpx;
+  background-color: white;
+  margin-top: 28rpx;
+}
+.pushimg >view:nth-child(1){
+  font-size: 26rpx;
+  color: #A5A5A5;
+  display: flex;
+}
+.pushimg >view:nth-child(1) > view:nth-child(1){
+  flex: 1;
+}
+.pushimg >view:nth-child(1) > view:nth-child(2){
+  text-align: right;
+  width: 100rpx;
+}
+.pushimg .imgdetail{
+  display: flex;
+  margin-top: 33rpx;
+}
+.pushimg .imgdetail >image{
+  width: 75rpx;
+  height: 75rpx;
+  margin-left: 10rpx;
+}
+.pushimg .imgdetail > view{
+  width: 75rpx;
+  height: 75rpx;
+  margin-left: 10rpx;
+}
+.pushimg .imgdetail > view >image{
+  width: 100%;
+  height: 100%;
+}

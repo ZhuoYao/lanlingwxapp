@@ -62,5 +62,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  goperson(e){
+    wx.navigateTo({
+      url: '../pernsonaldata/personaldata',
+    })
   }
 })

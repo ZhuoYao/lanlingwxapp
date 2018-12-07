@@ -1,0 +1,17 @@
+<!--pages/examdata/examdata.wxml-->
+<image src='../../img/goexamback.jpg'></image>
+<view class='examdata'>
+    <view class='scoreimg'>
+      <image src='../../img/goexamscore.png'></image>
+    </view>
+    <view class='score'>75</view>
+    <view class='lastscore'>上次成绩</view>
+    <view class='exdata-main'>
+      <view class='exdata-main-data'><view>考试科目</view><view>{{examdata.examName}}</view></view>
+      <view class='exdata-main-data'><view>考试规格</view><view>{{examdata.examSpec}}</view></view>
+      <view class='exdata-main-data'><view>剩余次数</view><view>{{examdata.mattersNeedAttention}}</view></view>
+      <view class='exdata-main-data'><view>平均成绩</view><view>{{examdata.avgScore}}分</view></view>
+    </view>
+    <view class='exdata-action'>答题不可修改，累计错题分数打到不及格标准时，系统自动提醒交卷，考试不通过。</view>
+    <view class='goexam' bindtap='goexam'><image src='../../img/goexam.png'></image></view>
+</view>

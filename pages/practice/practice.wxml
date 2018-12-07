@@ -1,0 +1,65 @@
+<!--pages/practice/practice.wxml-->
+<view class="practice">
+  <view class='practice-center'>
+    <view class='practice-main'>
+      <view class='title-content'>{{questioninfo.sort}}、{{questioninfo.questionContent}}</view>
+      <view class='xuanxiang'>
+      <view wx:for="{{questionoptions}}" wx:for-index="index" wx:key="item" data-index="{{index}}" bindtap='chooseanswer' data-xuanxiang="{{item.optionLetter}}">
+        <view>
+        <block wx:if="{{item.showtext}}">
+        {{item.optionLetter}}
+        </block>
+        <block wx:if="{{isanswer && trueindex === index}}">
+            <image src='../../img/true1.png'></image>
+        </block>
+        <block wx:if="{{isanswer && errorindex === index}}">
+          <image src='../../img/false1.png'></image>
+        </block>
+        </view><view>{{item.optionContent}}</view>
+      </view>
+      </view>
+       <view class='answer' wx:if="{{showanswer}}">
+      <text decode="{{true}}">答案:&nbsp;&nbsp;</text>{{trueanswer}}
+      </view>
+    </view>
+    <block wx:if="{{explain}}">
+    <view class='practice-explain'>
+      <view>解释</view>
+      <view>哪个部门负责日常监督检查工作,安全巡视的同时进行消防检查,推动消防安全制度的贯彻落实!</view>
+    </view>
+    </block>
+    <view class='practice-choose'>
+      <view wx:if="{{practicetype == 2}}" bindtap='goprevious'>上一题</view>
+      <view class='{{practicetype != 2?"onlynext":""}}' bindtap='gonext'>下一题</view>
+    </view>
+    </view>
+    <block wx:if="{{practicetype == 2}}">
+    <view class='practice-menu {{menushow? "goshow":""}}'>
+        <view class='practice-menu-top'>
+          <view class='practice-menu-top-left' bindtap='insertcollection'>
+            <image src="{{questioninfo.isCollection?'../../img/iscollection.png':'../../img/collection.png'}}"></image>
+            <view>收藏</view>
+          </view>
+          <view class='practice-menu-top-right'>
+          <image src='../../img/true2.png'></image>
+          <view>{{menutruenum}}</view>
+          <image src='../../img/false2.png'></image>
+          <view>{{menuerrornum}}</view>
+          <view bindtap='showmenu'>
+          <image src='../../img/menu.png'></image>
+          <view>{{menuhaddo}}/{{menuallnum}}</view>
+          </view>
+          </view>
+        </view>
+        <view class='practice-munu-main'>
+        <text>{{heading}}</text>
+        <view class='practice-menu-main-num'>
+          <scroll-view scroll-y="true">
+              <view wx:for="{{menudata}}" wx:for-index="index" wx:key="item" data-index="{{index}}" class="{{item.state == 2?'menutrue':''}}{{item.state == 3?'menuerror':''}}" bindtap='goother'>{{item.menuSort}}</view>
+          </scroll-view>
+        </view>
+        </view>
+    </view>
+    <view class='maskbox {{menushow? "showmask":""}}' bindtap='showmenu'></view>
+    </block>
+</view>

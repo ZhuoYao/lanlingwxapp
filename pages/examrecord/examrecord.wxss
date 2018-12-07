@@ -1,0 +1,64 @@
+/* pages/examrecord/examrecord.wxss */
+
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.recordnav {
+  height: 86rpx;
+  line-height: 86rpx;
+  font-size: 30rpx;
+  color: white;
+  background-color: #3985ee;
+  display: flex;
+  padding: 0rpx 62rpx;
+  text-align: center;
+}
+
+.recordnav > view:nth-child(1), .record-main > view >view:nth-child(1) {
+  width: 110rpx;
+}
+
+.recordnav > view:nth-child(2), .record-main > view >view:nth-child(2) {
+  flex: 1;
+}
+
+.recordnav > view:nth-child(3), .record-main > view >view:nth-child(3) {
+  width: 110rpx;
+}
+
+.recordnav > view:nth-child(4), .record-main > view >view:nth-child(4) {
+  width: 110rpx;
+}
+
+.recordnav > view:nth-child(5), .record-main > view >view:nth-child(5) {
+  width: 110rpx;
+}
+
+.record-main {
+  width: 100%;
+  height: calc(100% - 86rpx);
+  overflow-y: auto;
+}
+
+.record-main >view {
+  padding: 0 62rpx;
+  display: flex;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.record-main > view:nth-child(odd) {
+  height: 103rpx;
+  line-height: 103rpx;
+  color: black;
+  background-color: white;
+}
+
+.record-main > view:nth-child(even) {
+  height: 86rpx;
+  line-height: 86rpx;
+  color: white;
+  background-color: #74bfdb;
+}

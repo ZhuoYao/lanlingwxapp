@@ -1,0 +1,13 @@
+<!--pages/score/score.wxml-->
+<view class='score'>
+  <view class='score-top'>
+    <view><image src='../../img/score.png'></image><view class='scoredata'>75<text>分</text></view></view>
+     <view class='score-top-detail'>
+     <view class='score-top-left'><view>82</view><view>历史最高</view></view>
+    <view class='score-top-right'><view>21:09</view><view>本次用时</view></view>
+    </view>
+  </view>
+  <view class='score-bottom'>
+    <view class='score-zuijin' bindtap='gorecord'>最近成绩 <image src='../../img/arrow.png'></image> </view>
+  </view>
+</view>

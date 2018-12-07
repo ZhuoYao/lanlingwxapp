@@ -1,12 +1,31 @@
 {
   "pages": [
+    "pages/opinion/opinion",
+    "pages/signup/signup",
     "pages/index1/main",
     "pages/bottomnav/bottomnav",
-    "pages/signup/signup",
     "pages/index/index",
     "pages/logs/logs",
     "pages/recruit/recruit",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/score/score",
+    "pages/practice/practice",
+    "pages/examdata/examdata",
+    "pages/choosesubject/choosesubject",
+    "pages/collectionmenu/collectionmenu",
+    "pages/exam/exam",
+    "pages/examrecord/examrecord",
+    "pages/choosecity/choosecity",
+    "pages/icon/index",
+    "pages/rater/index",
+    "pages/fastregistration/fastregistration",
+    "pages/chooseschool/chooseschool",
+    "pages/notice/notice",
+    "pages/schooldetail/schooldetail",
+    "pages/allsubject/allsubject",
+    "pages/enlist/enlist",
+    "pages/evaluate/evaluate",
+    "pages/pernsonaldata/personaldata"
   ],
   "window": {
     "backgroundTextStyle": "light",

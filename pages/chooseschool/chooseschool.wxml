@@ -1,0 +1,19 @@
+<!--pages/chooseschool/chooseschool.wxml-->
+<view class='chooseschool'>
+  <view class='searchtop'>
+     <view class='search'>
+        <view><image src='../../img/search.png'></image>
+        <input placeholder="输入培训机构"></input>
+        </view>
+        <view>取消</view>
+      </view>
+      <view class='searchdown'>
+        <view class='searchtext'>热门搜索</view>
+        <view class='searchhot'>
+          <view>蓝领技术学院</view>
+          <view>蓝领技术学院</view>
+          <view>蓝领技术学院</view>
+        </view>
+      </view>
+      </view>
+</view>

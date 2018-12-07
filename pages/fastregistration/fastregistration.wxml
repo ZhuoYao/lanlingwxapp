@@ -1,0 +1,16 @@
+<!--pages/fastregistration/fastregistration.wxml-->
+<image src='../../img/regback.jpg' mode='widthFix'></image>
+<view class='registration'>
+  <view class='registration-top'>
+    <image src='../../img/reglogo.png' mode='widthFix'></image>
+  </view>
+  <view class='registration-main'>
+    <view class='title'>提交后学校会联系您</view>
+    <view><view>真实姓名</view><input placeholder='输入您的姓名'></input></view>
+    <view><view>联系电话</view><input placeholder='输入您的联系电话'></input></view>
+    <view><view>身份证号</view><input placeholder='输入您的身份证号'></input></view>
+    <view bindtap='choosesubject'><view>选择科目</view><view>{{subjectName}}</view><image src='../../img/arrow.png' mode='widthFix'></image></view>
+    <view> <image src='../../img/regsubmit.png' mode='widthFix'></image></view>
+    <view>提交表示已阅读并同意<text>《服务协议》</text> </view>
+  </view>
+</view>

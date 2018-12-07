@@ -1,0 +1,226 @@
+/* pages/exam/exam.wxss */
+
+page {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.exam {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.exam-main {
+  width: 100%;
+  height: calc(100% - 98rpx);
+  overflow-y: auto;
+}
+
+.exam .exam-time {
+  text-align: center;
+  font-size: 30rpx;
+  padding: 27rpx 0;
+}
+
+.exam .exam-content {
+  width: 680rpx;
+  margin: 0 auto;
+  box-shadow: 2px 2px 15px 0px rgba(167, 167, 167, 0.5);
+  border-radius: 30px;
+}
+
+.exam .exam-content .exam-content-title {
+  padding: 36rpx 48rpx;
+  font-size: 36rpx;
+}
+
+.exam .exam-content-optins {
+  padding: 23rpx 40rpx;
+}
+
+.exam .exam-content-optins .optinschoose {
+  border-color: #358aff;
+}
+
+.exam .exam-content-optins >view {
+  border: 2rpx solid;
+  border-color: white;
+  border-radius: 44rpx;
+  min-height: 84rpx;
+  font-size: 36rpx;
+  display: flex;
+  overflow: hidden;
+  margin-top: 10rpx;
+}
+
+.exam .exam-content-optins >view >view:first-child {
+  width: 51rpx;
+  height: 51rpx;
+  text-align: center;
+  font-size: 36rpx;
+  border-radius: 50%;
+  box-shadow: 0px 3px 13px 0px rgba(167, 167, 167, 0.46);
+  line-height: 52rpx;
+  overflow: hidden;
+  margin-top: 16.5rpx;
+  margin-left: 12rpx;
+}
+
+.exam .exam-content-optins >view >view:last-child {
+  padding-top: 20rpx;
+  width: 490rpx;
+  word-break: break-all;
+  word-wrap: break-word;
+  margin-left: 29rpx;
+}
+
+.submit {
+  width: 600rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 36rpx;
+  color: white;
+  background-color: #358aff;
+  box-shadow: 0px 3px 15px 0px rgba(167, 167, 167, 0.5);
+  border-radius: 44px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 56rpx;
+}
+
+.exam-menu {
+  position: absolute;
+  top: calc(100% - 98rpx);
+  width: 100%;
+  transition: all 0.5s;
+  z-index: 4;
+}
+
+.exam-munu-main > text {
+  padding: 28rpx 44rpx;
+  line-height: 82rpx;
+  font-size: 26rpx;
+}
+
+.exam-menu-top {
+  height: 98rpx;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.5s;
+  z-index: 4;
+}
+
+.exam-menu-top-left {
+  width: 350rpx;
+  line-height: 96rpx;
+  font-size: 26rpx;
+  overflow: hidden;
+  display: flex;
+}
+
+.exam-menu-top-left image {
+  width: 46rpx;
+  height: 46rpx;
+  margin-left: 53rpx;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.exam-menu-top-left view {
+  line-height: 96rpx;
+}
+
+.exam-menu-top-right {
+  display: flex;
+  font-size: 28rpx;
+  line-height: 98rpx;
+}
+
+.exam-menu-top-right image {
+  width: 46rpx;
+  height: 46rpx;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.exam-menu-top-right view {
+  margin-right: 41rpx;
+  margin-left: 10rpx;
+  display: flex;
+}
+
+.exam-menu-top-right view:last-child {
+  margin-left: 0rpx;
+}
+
+.exam-menu-top-right view view {
+  margin-right: 0rpx;
+}
+
+.goshow {
+  transform: translateY(-580rpx);
+}
+
+.exam-munu-main {
+  width: 100%;
+  height: 582rpx;
+  position: absolute;
+  top: 100%;
+  transition: all 0.5s;
+  background-color: white;
+  margin-top: 0rpx;
+  z-index: 4;
+  overflow: hidden;
+}
+
+.goshow1 {
+  transform: translateY(-582rpx);
+}
+
+.maskbox {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: none;
+}
+
+.showmask {
+  display: block;
+}
+
+.exam-menu-main-num {
+  padding-left: 44rpx;
+  height: 400rpx;
+}
+
+.exam-menu-main-num scroll-view {
+  height: 400rpx;
+}
+
+.exam-menu-main-num scroll-view view {
+  width: 64rpx;
+  height: 64rpx;
+  border: 2rpx solid;
+  border-color: #333;
+  border-radius: 50%;
+  margin-right: 33rpx;
+  margin-top: 25rpx;
+  float: left;
+  text-align: center;
+  line-height: 66rpx;
+  font-size: 32rpx;
+}
+.exam-menu-main-num .hadchoose{
+    border-color: #358AFF;
+    background-color: #358AFF;
+    color: white;
+}

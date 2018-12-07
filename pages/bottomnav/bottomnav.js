@@ -36,7 +36,7 @@ Component({
         break;
         case '2':
           wx.redirectTo({
-            url: '../recruit/recruit',
+            url: '../user/user',
           })
         break;
         case '3':

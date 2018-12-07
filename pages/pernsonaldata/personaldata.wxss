@@ -1,0 +1,48 @@
+/* pages/pernsonaldata/personaldata.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+.personaldata{
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: #F5F5F5;
+}
+.personaldata >view{
+  height: 88rpx;
+  line-height: 88rpx;
+  padding: 0 84rpx 0 58rpx;
+  font-size: 26rpx;
+  background-color: white;
+  display: flex;
+  margin-bottom: 3rpx;
+}
+.personaldata >view > view{
+  width: 200rpx;
+}
+.personaldata >view >input{
+  flex: 1;
+  height: 100%;
+  text-align: right;
+}
+.personaldata >view:nth-child(1){
+  height: 162rpx;
+  padding: 0 36rpx 0 57rpx;
+  line-height: 162rpx;
+}.personaldata >view:nth-child(4){
+  margin-bottom: 25rpx;
+}
+.personaldata >view:nth-child(1) >view{
+  flex: 1;
+}
+.personaldata >view:nth-child(1) >image:nth-child(2){
+  width: 114rpx;
+  height: 114rpx;
+  margin-top: 24rpx;
+}
+.personaldata >view:nth-child(1) >image:last-child{
+  margin-top: 60rpx;
+  width: 35rpx;
+  margin-left: 35rpx;
+}

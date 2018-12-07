@@ -1,0 +1,85 @@
+/* pages/allsubject/allsubject.wxss */
+
+page {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.allsubject {
+  padding: 0 51rpx 0 35rpx;
+  height: calc(100% - 100rpx);
+  overflow-y: auto;
+}
+
+.allsubject .renshe , .allsubject .jiaotong ,.allsubject .anjian {
+  padding: 35rpx 0;
+}
+
+.allsubject .renshe >view:nth-child(1) , .allsubject .jiaotong >view:nth-child(1) ,.allsubject .anjian >view:nth-child(1){
+  font-size: 32rpx;
+  font-weight: 600;
+  padding: 0 0 20rpx 0;
+}
+
+.allsubject .renshe >view , .allsubject .jiaotong >view,.allsubject .anjian >view {
+  display: flex;
+  height: 73rpx;
+  overflow: hidden;
+}
+
+.allsubject .renshe >view >view:nth-child(1) ,.allsubject .jiaotong >view >view:nth-child(1),.allsubject .anjian >view >view:nth-child(1) {
+  width: 90rpx;
+  height: 34rpx;
+  margin-top: 18.5rpx;
+  line-height: 34rpx;
+  border: 1rpx solid;
+  border-color: #358aff;
+  border-radius: 18rpx;
+  font-size: 22rpx;
+  text-align: center;
+  color: #358aff;
+}
+.allsubject .jiaotong >view >view:nth-child(1), .jiaotong >view >text:nth-child(3) , .allsubject .jiaotong >view >text:nth-child(4){
+  border-color: #1ECE47 !important;
+  color: #1ECE47 !important;
+}
+.allsubject .anjian >view >view:nth-child(1), .anjian >view >text:nth-child(3) , .allsubject .anjian >view >text:nth-child(4){
+  border-color: #FF9A54 !important;
+  color: #FF9A54 !important;
+}
+.allsubject .renshe >view >view:nth-child(2), .allsubject .jiaotong >view >view:nth-child(2),.allsubject .anjian >view >view:nth-child(2) {
+  flex: 1;
+  font-size: 22rpx;
+  line-height: 73rpx;
+  color: #666;
+  margin-left: 11rpx;
+}
+
+.allsubject .renshe >view >text:nth-child(3),.allsubject .jiaotong >view >text:nth-child(3),.allsubject .anjian >view >text:nth-child(3) {
+  color: #358aff;
+  font-size: 22rpx;
+  line-height: 73rpx;
+}
+
+.allsubject .renshe >view >text:nth-child(4),.allsubject .jiaotong >view >text:nth-child(4),.allsubject .anjian >view >text:nth-child(4) {
+  font-size: 28rpx;
+  line-height: 73rpx;
+  color: #358aff;
+}
+
+.allsubject .renshe >view >image:nth-child(5) ,.allsubject .jiaotong >view >image:nth-child(5),.allsubject .anjian >view >image:nth-child(5){
+  margin-top: 18rpx;
+  margin-left: 100rpx;
+  margin-right: 5rpx;
+  width: 25rpx;
+}
+page > view:nth-child(2){
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background-color: #358AFF;
+  color: white;
+  font-size: 30rpx;
+}

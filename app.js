@@ -33,7 +33,80 @@ App({
       }
     })
   },
+  changepraticelsit(data,type){
+    console.log(data, type);
+      switch(type){
+         case 0 :
+          this.globalData.practicelist.push(data);
+         break;
+         case 1:
+          this.globalData.practicelist[data.num].studentAnswer = data.studentAnswer;
+          this.globalData.practicelist[data.num].trueAnswer = data.trueAnswer;
+         break;
+         case 2:
+          this.globalData.practicelist[data.num].isCollection = data.isCollection;
+         break;
+      }
+  },
+  changesubject(data){
+    this.globalData.subjectName = data.subjectName;
+    this.globalData.subjectId = data.subjectId
+  },
+  changecategory(data){
+      this.globalData.category = data;
+  },
+  changepraticemenu(data,type){
+      if(type == 0){
+        this.globalData.practicemenu = data;
+      }else{
+        this.globalData.practicemenu[data.num].state = data.state; 
+      }
+  },
+  changeexammenu(data,type){
+      if(type ==0){
+        this.globalData.exammenu = data;
+      }else{
+        this.globalData.exammenu[data.num].state = 2;
+      }
+  },
+  changeexamlsit(data, type) {
+    console.log(data, type);
+    switch (type) {
+      case 0:
+        this.globalData.examlist.push(data);
+        break;
+      case 1:
+        this.globalData.examlist[data.num].studentAnswer = data.studentAnswer;
+        break;
+      case 2:
+        this.globalData.examlist[data.num].isCollection = data.isCollection;
+        break;
+      case 3:
+        this.globalData.examlist = []
+        break;
+    }
+  },
+  changecity(data){
+      this.globalData.city = data;
+  },
+  setcurrentOptions(data){
+      this.globalData.currentOptions = data;
+  },
+  setallsubject(data){
+      this.globalData.allsubject = data;
+  },
+
   globalData: {
-    userInfo: null
+    userInfo: null,
+    practicemenu:[],
+    practicelist:[],
+    subjectName:'',
+    subjectId:'',
+    category:0,
+    currentOptions:{},
+    exammenu:[],
+    examlist:[],
+    city:'佛山',
+    allsubject:[]
   }
 })

@@ -3,20 +3,31 @@
   <view>
   <swiper indicator-dots="{{indicatorDots}}"
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-  <block wx:for="{{swiperdata}}">
+  <block wx:for="{{swiperdata}}" wx:key="item">
     <swiper-item>
       <image src="{{item}}" class="slide-image"/>
     </swiper-item>
   </block>
 </swiper>
 <view class='category'>
-  <view><text class="{{categoryindex == 0?'cgactive':''}}">人社类</text><view class="{{categoryindex == 0?'categoryactive':''}}"></view></view>
-  <view><text class="{{categoryindex == 1?'cgactive':''}}">交通类</text><view class="{{categoryindex == 1?'categoryactive':''}}"></view></view>
-  <view><text class="{{categoryindex == 2?'cgactive':''}}">安监类</text><view class="{{categoryindex == 2?'categoryactive':''}}"></view></view>
+  <view bindtap='choosesubject' data-id='0'><text class="{{categoryindex == 0?'cgactive':''}}">人社类</text><view class="{{categoryindex == 0?'categoryactive':''}}"></view></view>
+  <view bindtap='choosesubject' data-id='1'><text class="{{categoryindex == 1?'cgactive':''}}">交通类</text><view class="{{categoryindex == 1?'categoryactive':''}}"></view></view>
+  <view bindtap='choosesubject' data-id='2'><text class="{{categoryindex == 2?'cgactive':''}}">安监类</text><view class="{{categoryindex == 2?'categoryactive':''}}"></view></view>
 </view>
 <view class='subject'>
-  <view>科目</view>
+  <view><image src='../../img/subjectmenu.png' mode="widthFix"></image> 科目</view>
+  <view bindtap='choosesubject1'><text decode='{{true}}'>&nbsp;{{subjectName}}</text><view><image src='../../img/arrow.png' mode='widthFix'></image></view></view>
 </view>
 </view>
+<view class='choosetype'>
+      <view bindtap='gopractice' data-id='1'><image src='../../img/suiji.png'></image><view>随机练习</view></view>
+      <view bindtap='gopractice' data-id='2'><image src='../../img/shunxu.png'></image></view>
+      <view bindtap='gopractice' data-id='3'><image src='../../img/cuoti.png'></image><view>错题练习</view></view>
+   </view>
+  <view class='choosetype1'>
+      <view bindtap='goscore'><image src='../../img/chengji.png'></image><view>成绩</view></view>
+      <view bindtap='goexam'><image src='../../img/kaoshi.png'></image></view>
+      <view bindtap='gopractice' data-id='4'><image src='../../img/shoucang.png'></image><view>收藏</view></view>
+  </view>
 <bottom-nav nav-index='1'></bottom-nav>
 </view>

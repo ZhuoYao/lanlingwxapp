@@ -1,0 +1,46 @@
+<!--pages/choosesubject/choosesubject.wxml-->
+<view class='getsubject'>
+  <view class='searchsubject {{type == 1?"":"type2"}}'>
+      <view class='search'>
+        <view><image src='../../img/search.png'></image>
+        <input placeholder="输入科目"></input>
+        </view>
+        <view>取消</view>
+      </view>
+      <view class='search-text' wx:if="{{type == 1}}">
+        <view>当前科目</view>
+        <view  class='currentsubject' wx:if="{{currentSubject}}">{{currentSubject}}</view>
+      </view>
+  </view>
+  <view class='scroll-subject {{type == 1?"":"type2-reg"}}'>
+   <scroll-view scroll-y scroll-into-view="{{toView}}">
+     <block wx:for="{{subjectdata}}" wx:for-item="group">
+      <view id="{{group.py}}">
+        <view class="group-name">{{group.py}}</view>
+        <view class=" group-subject">
+          <view wx:for="{{group.subject}}" wx:for-item="user" wx:for-index="idx">
+            <view class="subject-name"  wx:if="{{user.isChoose == 0}}" bindtap='cancellock'>
+            <view>{{user.subjectName}}</view>
+            <view><image src='../../img/lock.png'></image></view>
+            </view>
+            <view class='subject-name' wx:else bindtap='choosesubject' data-subjectname="{{user.subjectName}}" data-subjectid="{{user.subjectId}}">
+            <view>{{user.subjectName}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+   </scroll-view>
+   <view>
+   <scroll-view scroll-y>
+    <view wx:for="{{viewdata}}" wx:key="item" data-py="{{item}}" bindtap='goscroll'>{{item}}</view>
+    </scroll-view>
+   </view>
+  </view>
+  <view class='mask {{maskshow?"maskshow":""}}'>
+      <view>
+        <view class='content'>报名解锁题库!</view>
+        <view class='buttonbox'><view bindtap='cancellock'>取消</view><view>确定</view></view>
+      </view>
+  </view>
+</view>

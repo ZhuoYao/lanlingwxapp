@@ -1,2 +1,28 @@
 <!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<view class='user'>
+    <view class='user-icon' bindtap='goperson'>
+    <view>
+      <image src='../../img/usericon.png'></image>
+      <view>
+        <view>未登录</view>
+        <view>点击登录账号</view>
+      </view>
+      <image src='../../img/arrow.png' mode="widthFix"></image>
+    </view>
+    </view>
+    <view class='user-school'>
+      <image src='../../img/mechanismicon.png' mode='widthFix'></image>
+      <view>我的机构</view>
+      <view>
+      <view>还没有关联学校</view>
+      <view>立即关联</view>
+      </view>
+    </view>
+    <view class='user-other'>
+      <view><image src='../../img/ordericon.png' mode="widthFix"></image><view>我的订单</view><image src='../../img/arrow.png' mode="widthFix"></image></view>
+      <view><image src='../../img/certificatesicon.png' mode="widthFix"></image><view>我的证件</view><image src='../../img/arrow.png' mode="widthFix"></image></view>
+      <view><image src='../../img/opinionicon.png' mode="widthFix"></image><view>意见反馈</view><image src='../../img/arrow.png' mode="widthFix"></image></view>
+      <view><image src='../../img/aboutusicon.png' mode="widthFix"></image><view>关于我们</view><image src='../../img/arrow.png' mode="widthFix"></image></view>
+    </view>
+<bottom-nav nav-index='2'></bottom-nav>
+</view>

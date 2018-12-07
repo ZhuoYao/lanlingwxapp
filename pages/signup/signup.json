@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "bottom-nav": "../bottomnav/bottomnav"
+    "bottom-nav": "../bottomnav/bottomnav",
+    "wux-rater": "../rater/index"
   }
 }

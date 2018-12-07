@@ -11,12 +11,7 @@
    <text>练习</text>
    </view>
    <view  class="bottom-nav-bottom {{navIndex == 2?'active':''}}" bindtap='gopage' data-index='2'>
-   <view wx:if="{{navIndex == 2}}"><image src="../../img/zhaopin.png" mode="widthFix"></image></view>
-   <view wx:else><image src="../../img/nozhaopin.png" mode="widthFix"></image></view>
-   <text>招聘</text>
-   </view>
-   <view  class="bottom-nav-bottom {{navIndex == 3?'active':''}}" bindtap='gopage' data-index='3'>
-   <view wx:if="{{navIndex == 3}}"><image src="../../img/wode.png" mode="widthFix"></image></view>
+   <view wx:if="{{navIndex == 2}}"><image src="../../img/wode.png" mode="widthFix"></image></view>
    <view wx:else><image src="../../img/nowode.png" mode="widthFix"></image></view>
    <text>我的</text>
    </view>

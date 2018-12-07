@@ -1,0 +1,34 @@
+<!--pages/allsubject/allsubject.wxml-->
+<view class='allsubject'>
+  <view wx:if="{{renshe != ''}}" class='renshe'>
+    <view>人社类</view>
+     <view wx:for="{{renshe}}" wx:for-index="index" wx:key="item">
+        <view>{{item.type}}</view>
+        <view>{{item.signSubjectName}}</view>
+        <text>¥</text>
+        <text>{{item.subjectPrice}}</text>
+        <image src='../../img/arrow1.png' mode='widthFix'></image>
+     </view>
+  </view>
+  <view wx:if="{{jiaotong != ''}}" class='jiaotong'>
+    <view>交通类</view>
+     <view wx:for="{{jiaotong}}" wx:for-index="index" wx:key="item">
+        <view>{{item.type}}</view>
+        <view>{{item.signSubjectName}}</view>
+        <text>¥</text>
+        <text>{{item.subjectPrice}}</text>
+        <image src='../../img/arrow1.png' mode='widthFix'></image>
+     </view>
+  </view>
+  <view wx:if="{{anjian != ''}}" class='anjian'>
+    <view>安监类</view>
+     <view wx:for="{{anjian}}" wx:for-index="index" wx:key="item">
+        <view>{{item.type}}</view>
+        <view>{{item.signSubjectName}}</view>
+        <text>¥</text>
+        <text>{{item.subjectPrice}}</text>
+        <image src='../../img/arrow1.png' mode='widthFix'></image>
+     </view>
+  </view>
+</view>
+<view>咨询</view>

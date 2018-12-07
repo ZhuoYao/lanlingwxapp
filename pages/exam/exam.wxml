@@ -1,0 +1,49 @@
+<!--pages/exam/exam.wxml-->
+<view class='exam'>
+    <view class='exam-main'>
+      <view class='exam-time' wx:if="{{ispush == 1}}">
+      <text decode="{{true}}"> 倒计时: &nbsp;{{examtime}}</text>
+      </view>
+      <view class='exam-content'>
+        <view class='exam-content-title'>
+        {{sort}}、哪个部门负责日常监督检查工作,安全巡视的同时进行消防检查,推动消防安全制度的贯彻落实？
+        </view>
+        <view class='exam-content-optins'>
+          <view wx:for="{{questionoptions}}" wx:for-index="index" wx:key="item" data-index="{{index}}" bindtap='chooseanswer' data-xuanxiang="{{item.optionLetter}}" class="{{item.ischoose?'optinschoose':''}}">
+              <view>
+                {{item.optionLetter}}
+              </view>
+              <view>
+                {{item.optionContent}}
+              </view>
+          </view>
+        </view>
+      </view>
+      <view class='submit' bindtap='examsubmit'>确定</view>
+      </view>
+      <view class='exam-menu {{menushow? "goshow":""}}'>
+        <view class='exam-menu-top'>
+          <view class='exam-menu-top-left'>
+           <image src="{{questioninfo.isCollection?'../../img/iscollection.png':'../../img/collection.png'}}"></image>
+            <view>收藏</view>
+            <image src='../../img/exam_push.png' bindtap='submitexam'></image>
+            <view bindtap='submitexam'>交卷</view>
+          </view>
+          <view class='exam-menu-top-right'>
+          <view bindtap='showmenu'>
+          <image src='../../img/menu.png'></image>
+          <view>{{sort}}/{{allnum}}</view>
+          </view>
+          </view>
+        </view>
+        <view class='exam-munu-main'>
+        <text>{{heading}}</text>
+        <view class='exam-menu-main-num'>
+          <scroll-view scroll-y="true">
+              <view wx:for="{{exammenu}}" wx:key="item" wx:for-index="index" data-index="{{index+1}}" class="{{item.state==2?'hadchoose':''}}" bindtap="goother">{{item.sort}}</view>
+          </scroll-view>
+        </view>
+        </view>
+    </view>
+    <view class='maskbox {{menushow? "showmask":""}}' bindtap='showmenu'></view>
+</view>

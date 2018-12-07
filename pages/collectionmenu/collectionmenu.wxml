@@ -1,0 +1,24 @@
+<!--pages/collectionmenu/collectionmenu.wxml-->
+<image src='../../img/collectionback.jpg'></image>
+<view class='collection'>
+    <view class='collection-top'>
+      <view>
+         <view>
+            <view>4</view>
+            <view wx:if="{{type == '1'}}">我的错题</view>
+            <view wx:else>考试收藏</view>
+         </view>
+      </view>
+    </view>
+    <view class='collection-bottom'>
+        <view class='collection-title'>
+             <view wx:for="{{collectiondata}}" wx:key="item" wx:for-index="index"  data-index="{{index}}" bindtap='gopractice'>
+              <view>{{item.title}}</view>
+              <view>{{item.num}}</view>
+              <image src='../../img/arrow.png'></image>
+             </view>
+        </view>
+        <view class='collection-button' wx:if="{{type == '1'}}">清空我的错题</view>
+        <view class='collection-button' wx:else>清空我的收藏</view>
+    </view>
+</view>

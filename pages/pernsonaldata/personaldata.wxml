@@ -1,0 +1,9 @@
+<!--pages/pernsonaldata/personaldata.wxml-->
+<view class='personaldata'>
+  <view bindtap='changeicon'><view>头像</view><image src='../../img/usericon.png'></image> <image src='../../img/arrow.png' mode='widthFix'></image></view>
+  <view><view>昵称</view><input placeholder='123'></input></view>
+   <view><view>手机号码</view><input placeholder='123'></input></view>
+    <view><view>身份证号</view><input placeholder='123'></input></view>
+     <view><view>真实姓名</view><input placeholder='123'></input></view>
+     <view><view>性别</view><input placeholder='123'></input></view>
+</view>

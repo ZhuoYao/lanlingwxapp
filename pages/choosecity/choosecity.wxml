@@ -1,0 +1,36 @@
+<!--pages/choosecity/choosecity.wxml-->
+<view class='getsubject'>
+  <view class='searchsubject'>
+      <view class='search'>
+        <view><image src='../../img/search.png'></image>
+        <input placeholder="输入城市"></input>
+        </view>
+        <view>取消</view>
+      </view>
+      <view class='search-text'>
+        <view>当前城市</view>
+        <view>佛山</view>
+      </view>
+  </view>
+  <view class='scroll-subject'>
+   <scroll-view scroll-y scroll-into-view="{{toView}}">
+     <block wx:for="{{citydata}}" wx:for-item="group">
+      <view id="{{group.py}}">
+        <view class="group-name">{{group.py}}</view>
+        <view class=" group-subject">
+          <view wx:for="{{group.citylist}}" wx:for-item="user" wx:for-index="idx">
+            <view class='subject-name'  bindtap='choosecity'>
+            <view>{{user.city}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+   </scroll-view>
+   <view>
+   <scroll-view scroll-y>
+    <view wx:for="{{viewdata}}" wx:key="item" data-py="{{item}}" bindtap='goscroll'>{{item}}</view>
+    </scroll-view>
+   </view>
+  </view>
+</view>

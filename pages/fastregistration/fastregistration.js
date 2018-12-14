@@ -1,4 +1,6 @@
 // pages/fastregistration/fastregistration.js
+import { _signUpRecord} from '../../utils/request.js'
+var app = getApp();
 Page({
 
   /**
@@ -6,7 +8,11 @@ Page({
    */
   data: {
       subjectName:'选择您的科目',
-      subjectId:''
+      subjectId:'',
+      category:1,
+      uname:'',
+      phone:'',
+      idcard:''
   },
 
   /**
@@ -66,7 +72,69 @@ Page({
   },
   choosesubject(e){
     wx.navigateTo({
-      url: '../choosesubject/choosesubject?type=2',
+      url: '../choosesubject/choosesubject?type=2&category=' + this.data.category,
+    })
+  },
+  getcategory(e){
+    // console.log(e);
+    this.setData({
+      category: e.detail.value
+    })
+  },
+  goreg(e){
+      if(this.data.uname == ''){
+        wx.showToast({
+          title: '请填写您的真实姓名',
+          icon: 'none'
+        })
+        return;
+      }
+    if (this.data.phone == '') {
+      wx.showToast({
+        title: '请填写您的联系电话',
+        icon: 'none'
+      })
+      return;
+    }
+    if (this.data.idcard == '') {
+      wx.showToast({
+        title: '请填写您的身份证号',
+        icon: 'none'
+      })
+      return;
+    }
+    if(this.data.subjectId == ''){
+      wx.showToast({
+        title: '请选择科目',
+        icon: 'none'
+      })
+      return; 
+    }
+    _signUpRecord({ realName: this.data.uname, phone: this.data.phone, idCard: this.data.idcard, signUpSubjectId: parseInt(this.data.subjectId)}).then(data => {
+      console.log(data);
+      wx.navigateTo({
+        url: '../regcompleted/regcompleted',
+      })
+    },error => {
+      wx.showToast({
+        title: error.msg,
+        icon: 'none'
+      })
+    })
+  },
+  getuname(e){
+    this.setData({
+      uname : e.detail.value
+    })
+  },
+  getphone(e){
+    this.setData({
+      phone: e.detail.value
+    })
+  },
+  getidcard(e){
+    this.setData({
+      idcard: e.detail.value
     })
   }
 })

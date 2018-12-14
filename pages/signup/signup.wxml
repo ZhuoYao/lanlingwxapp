@@ -25,13 +25,14 @@
   <view class='school' id="school">
   <view class='screen {{menufix?"menufix":""}}' bindtap='showchoosetype'><view>更多</view> <image src='../../img/arrow.png' mode='widthFix'></image> </view>
    <!-- <wux-rater slot="footer" default-value="{{ 3.7 }}" fontSize="{{20}}" disabled /> -->
-    <view wx:for="{{schoollist}}" wx:key="item" class='schoollist' bindtap='goschooldetail'>
+    <view wx:for="{{schoollist}}" wx:key="item" class='schoollist' bindtap='goschooldetail' data-id="{{item.schoolId}}">
       <view><image src='{{item.schoolLogo}}'></image></view>
       <view>
        <view>{{item.schoolName}}</view>
-       <view><wux-rater slot="footer" default-value="{{item.star}}" fontSize="{{18}}" disabled /></view>
+       <view><wux-rater slot="footer" value="{{item.star}}" fontSize="{{18}}" disabled controlled="true" /></view>
        <view>¥{{item.price}}</view>
       </view>
+      <view>{{item.distance}}km</view>
       <view> <image src='../../img/arrow.png' mode='widthFix'></image> </view>
     </view>
   </view>
@@ -51,10 +52,11 @@
           </view>
           </view>
           <view class='surebotton'>
-          <view>重置</view>
-          <view>确定</view>
+          <view bindtap='resetscreen'>重置</view>
+          <view bindtap='submitscreen'>确定</view>
           </view>
     </view>
   </view>
+  <view class='mask1'></view>
 <bottom-nav nav-index='0'></bottom-nav>
 </view>

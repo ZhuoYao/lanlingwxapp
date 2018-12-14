@@ -1,68 +1,83 @@
-const Globalurl = 'http://test.nataliee.top/lanling-api/api';
-// const Globalurl = 'http://192.168.0.10:8081/lanling-api/api';
-var Token = 'cd361c510c1f423d9b4a57b1b112b6b4';
-const _SetToken = function (token) {
+// const Globalurl = 'http://test.nataliee.top/lanling-api/api';
+const Globalurl = 'http://192.168.1.15:8081/lanling-api/api';
+var app = getApp();
+var Token = app.globalData.token;
+const _SetToken = function(token) {
   Token = token;
-  console.log(Token)
+  app.changetoken(token);
+  // console.log(token);
 };
-const _GetSubject = function(data){
+const _GetSubject = function(data) {
+  if(app.globalData.token != '' && Token == ''){
+    _SetToken(app.globalData.token);
+  }
   return new Promise((resolve, reject) => {
-      wx.request({
-        url: `${Globalurl}/subject/getXSubjectList`,
-        data:data,
-        method:'POST',
-        header: {
-          "Content-Type": "application/x-www-form-urlencoded",
-          "token": Token
-        },
-        success : res => {
-          console.log(res);
-          resolve(res);
-        }
-      })
-  })
-}
-
-const _login = function(data){
-  return new Promise((resolve,reject) => {
     wx.request({
-      url: `${Globalurl}/student/login`,
-      data: { account: '15626160835', password:'123456'},
+      url: `${Globalurl}/subject/getXSubjectList`,
+      data: data,
       method: 'POST',
       header: {
-        "Content-Type": "application/x-www-form-urlencoded"
+        "Content-Type": "application/x-www-form-urlencoded",
+        "token": Token
       },
-      success : res => {
-          console.log(res);
-          resolve(res);
+      success: res => {
+        console.log(res);
+        resolve(res);
       }
     })
   })
 }
 
-const _getQuestionList = function(data){
-    return new Promise((resolve,reject) => {
-      wx.request({
-        url: `${Globalurl}/subject/getQuestionList`,
-        data:data,
-        method:'POST',
-        header: {
-          "Content-Type": "application/x-www-form-urlencoded",
-          "token": Token
-        },
-        success : res => {
-          if(res.data.code == 0){
-          resolve(res.data);
-          }else{
-            reject(res.data);
-          }
-        }
-      })
+const _login = function(data) {
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: `${Globalurl}/student/login`,
+      data: {
+        account: '15626160835',
+        password: '123456'
+      },
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success: res => {
+        console.log(res);
+        resolve(res);
+        _SetToken(res.data.data.token);
+      }
     })
+  })
 }
 
-const _recordAnswer = function(data){
-  return new Promise((resolve,reject) => {
+const _getQuestionList = function(data) {
+  if(app.globalData.token != '' && Token == ''){
+    _SetToken(app.globalData.token);
+  }
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: `${Globalurl}/subject/getQuestionList`,
+      data: data,
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "token": Token
+      },
+      success: res => {
+        if (res.data.code == 0) {
+          resolve(res.data);
+        } else {
+          reject(res.data);
+        }
+      }
+    })
+  })
+}
+
+const _recordAnswer = function(data) {
+  if(app.globalData.token != '' && Token == ''){
+    _SetToken(app.globalData.token);
+  }
+  return new Promise((resolve, reject) => {
     wx.request({
       url: `${Globalurl}/subject/recordAnswer`,
       data: data,
@@ -82,7 +97,10 @@ const _recordAnswer = function(data){
   })
 }
 
-const _insertCollection = function(data){
+const _insertCollection = function(data) {
+  if(app.globalData.token != '' && Token == ''){
+    _SetToken(app.globalData.token);
+  }
   return new Promise((resolve, reject) => {
     wx.request({
       url: `${Globalurl}/question/insertErrorQuestion`,
@@ -100,10 +118,13 @@ const _insertCollection = function(data){
         }
       }
     })
-  })  
+  })
 }
 
-const _getExamInfo = function(data){
+const _getExamInfo = function(data) {
+  if(app.globalData.token != '' && Token == ''){
+    _SetToken(app.globalData.token);
+  }
   return new Promise((resolve, reject) => {
     wx.request({
       url: `${Globalurl}/exam/getExamInfo`,
@@ -121,10 +142,13 @@ const _getExamInfo = function(data){
         }
       }
     })
-  })  
+  })
 }
 
-const _createExamPaper = function(data){
+const _createExamPaper = function(data) {
+  if(app.globalData.token != '' && Token == ''){
+    _SetToken(app.globalData.token);
+  }
   return new Promise((resolve, reject) => {
     wx.request({
       url: `${Globalurl}/exam/createExamPaper`,
@@ -142,10 +166,13 @@ const _createExamPaper = function(data){
         }
       }
     })
-  })  
+  })
 }
 
-const _questionOneByOne = function(data){
+const _questionOneByOne = function(data) {
+  if(app.globalData.token != '' && Token == ''){
+    _SetToken(app.globalData.token);
+  }
   return new Promise((resolve, reject) => {
     wx.request({
       url: `${Globalurl}/exam/questionOneByOne`,
@@ -163,10 +190,13 @@ const _questionOneByOne = function(data){
         }
       }
     })
-  })  
+  })
 }
 
-const _questionState = function(data){
+const _questionState = function(data) {
+  if(app.globalData.token != '' && Token == ''){
+    _SetToken(app.globalData.token);
+  }
   return new Promise((resolve, reject) => {
     wx.request({
       url: `${Globalurl}/exam/questionState`,
@@ -184,10 +214,13 @@ const _questionState = function(data){
         }
       }
     })
-  })  
+  })
 }
 
-const _submitQuestion = function(data){
+const _submitQuestion = function(data) {
+  if(app.globalData.token != '' && Token == ''){
+    _SetToken(app.globalData.token);
+  }
   return new Promise((resolve, reject) => {
     wx.request({
       url: `${Globalurl}/exam/submitQuestion`,
@@ -205,10 +238,13 @@ const _submitQuestion = function(data){
         }
       }
     })
-  })  
+  })
 }
 
-const _submitExam = function(data){
+const _submitExam = function(data) {
+  if(app.globalData.token != '' && Token == ''){
+    _SetToken(app.globalData.token);
+  }
   return new Promise((resolve, reject) => {
     wx.request({
       url: `${Globalurl}/exam/submitExam`,
@@ -229,7 +265,10 @@ const _submitExam = function(data){
   })
 }
 
-const _getExamList = function(data){
+const _getExamList = function(data) {
+  if(app.globalData.token != '' && Token == ''){
+    _SetToken(app.globalData.token);
+  }
   return new Promise((resolve, reject) => {
     wx.request({
       url: `${Globalurl}/exam/getExamList`,
@@ -250,7 +289,10 @@ const _getExamList = function(data){
   })
 }
 
-const _getXSubjectList = function(data){
+const _getXSubjectList = function(data) {
+  if(app.globalData.token != '' && Token == ''){
+    _SetToken(app.globalData.token);
+  }
   return new Promise((resolve, reject) => {
     wx.request({
       url: `${Globalurl}/subject/getXSubjectList`,
@@ -271,7 +313,10 @@ const _getXSubjectList = function(data){
   })
 }
 
-const _getSchoolList = function(data){
+const _getSchoolList = function(data) {
+  if(app.globalData.token != '' && Token == ''){
+    _SetToken(app.globalData.token);
+  }
   return new Promise((resolve, reject) => {
     wx.request({
       url: `${Globalurl}/school/getSchoolList`,
@@ -292,7 +337,10 @@ const _getSchoolList = function(data){
   })
 }
 
-const _getSchool = function(data){
+const _getSchool = function(data) {
+  if(app.globalData.token != '' && Token == ''){
+    _SetToken(app.globalData.token);
+  }
   return new Promise((resolve, reject) => {
     wx.request({
       url: `${Globalurl}/school/getSchool`,
@@ -306,13 +354,22 @@ const _getSchool = function(data){
         if (res.data.code == 0) {
           resolve(res.data);
         } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
           reject(res.data);
+          }
         }
       }
     })
   })
 }
-const _signUpRecord = function(data){
+const _signUpRecord = function(data) {
+  if(app.globalData.token != '' && Token == ''){
+    _SetToken(app.globalData.token);
+  }
   return new Promise((resolve, reject) => {
     wx.request({
       url: `${Globalurl}/student/signUpRecord`,
@@ -333,10 +390,13 @@ const _signUpRecord = function(data){
   })
 }
 
-const _getNotice = function(data){
+const _getNotice = function(data) {
+  if(app.globalData.token != '' && Token == ''){
+    _SetToken(app.globalData.token);
+  }
   return new Promise((resolve, reject) => {
     wx.request({
-      url: `${Globalurl}/user/getNotice`,
+      url: `${Globalurl}/school/getNotice`,
       data: data,
       method: 'POST',
       header: {
@@ -354,7 +414,10 @@ const _getNotice = function(data){
   })
 }
 
-const _getSchoolDetail = function(data){
+const _getSchoolDetail = function(data) {
+  if(app.globalData.token != '' && Token == ''){
+    _SetToken(app.globalData.token);
+  }
   return new Promise((resolve, reject) => {
     wx.request({
       url: `${Globalurl}/school/getSchoolDetail`,
@@ -375,10 +438,248 @@ const _getSchoolDetail = function(data){
   })
 }
 
-const _getCity = function(data){
+const _getCity = function(data) {
+  if(app.globalData.token != '' && Token == ''){
+    _SetToken(app.globalData.token);
+  }
   return new Promise((resolve, reject) => {
     wx.request({
       url: `${Globalurl}/school/getCity`,
+      data: data,
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "token": Token
+      },
+      success: res => {
+        if (res.data.code == 0) {
+          resolve(res.data);
+        } else {
+          reject(res.data);
+        }
+      }
+    })
+  })
+}
+
+const _getSchoolEvaluate = function(data) {
+  if(app.globalData.token != '' && Token == ''){
+    _SetToken(app.globalData.token);
+  }
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: `${Globalurl}/school/getSchoolEvaluate`,
+      data: data,
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "token": Token
+      },
+      success: res => {
+        if (res.data.code == 0) {
+          resolve(res.data);
+        } else {
+          reject(res.data);
+        }
+      }
+    })
+  })
+}
+
+const _getSignUpSubjectId = function(data) {
+  if(app.globalData.token != '' && Token == ''){
+    _SetToken(app.globalData.token);
+  }
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: `${Globalurl}/student/getSignUpSubjectId`,
+      data: data,
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "token": Token
+      },
+      success: res => {
+        if (res.data.code == 0) {
+          resolve(res.data);
+        } else {
+          reject(res.data);
+        }
+      }
+    })
+  })
+}
+
+const _getCenterInfo = function(data){
+  if(app.globalData.token != '' && Token == ''){
+    _SetToken(app.globalData.token);
+  }
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: `${Globalurl}/student/getCenterInfo`,
+      data: data,
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "token": Token
+      },
+      success: res => {
+        if (res.data.code == 0) {
+          resolve(res.data);
+        } else {
+          reject(res.data);
+        }
+      }
+    })
+  })
+}
+
+const _getOrderList = function(data){
+  if(app.globalData.token != '' && Token == ''){
+    _SetToken(app.globalData.token);
+  }
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: `${Globalurl}/student/getOrderList`,
+      data: data,
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "token": Token
+      },
+      success: res => {
+        if (res.data.code == 0) {
+          resolve(res.data);
+        } else {
+          reject(res.data);
+        }
+      }
+    })
+  })
+}
+
+const _getHotCity =function(data){
+  if (app.globalData.token != '' && Token == '') {
+    _SetToken(app.globalData.token);
+  }
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: `${Globalurl}/school/getHotCity`,
+      data: data,
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "token": Token
+      },
+      success: res => {
+        if (res.data.code == 0) {
+          resolve(res.data);
+        } else {
+          reject(res.data);
+        }
+      }
+    })
+  })
+}
+
+const _getCertificate = function(data){
+  if (app.globalData.token != '' && Token == '') {
+    _SetToken(app.globalData.token);
+  }
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: `${Globalurl}/student/getCertificate`,
+      data: data,
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "token": Token
+      },
+      success: res => {
+        if (res.data.code == 0) {
+          resolve(res.data);
+        } else {
+          reject(res.data);
+        }
+      }
+    })
+  })
+}
+
+const _smsCode = function(data){
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: `${Globalurl}/student/smsCode`,
+      data: data,
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "token": Token
+      },
+      success: res => {
+        if (res.data.code == 0) {
+          resolve(res.data);
+        } else {
+          reject(res.data);
+        }
+      }
+    })
+  })
+}
+
+const _XLogin = function(data){
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: `${Globalurl}/student/XLogin`,
+      data: data,
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "token": Token
+      },
+      success: res => {
+        if (res.data.code == 0) {
+          resolve(res.data);
+          _SetToken(res.data.data.token);
+        } else {
+          reject(res.data);
+        }
+      }
+    })
+  })
+}
+
+const _getRelatedSchool = function(data){
+  if (app.globalData.token != '' && Token == '') {
+    _SetToken(app.globalData.token);
+  }
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: `${Globalurl}/student/getRelatedSchool`,
+      data: data,
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "token": Token
+      },
+      success: res => {
+        if (res.data.code == 0) {
+          resolve(res.data);
+        } else {
+          reject(res.data);
+        }
+      }
+    })
+  })
+}
+
+const _setCenterInfo = function(data){
+  if (app.globalData.token != '' && Token == '') {
+    _SetToken(app.globalData.token);
+  }
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: `${Globalurl}/student/setCenterInfo`,
       data: data,
       method: 'POST',
       header: {
@@ -416,5 +717,15 @@ module.exports = {
   _signUpRecord,
   _getNotice,
   _getSchoolDetail,
-  _getCity
+  _getCity,
+  _getSchoolEvaluate,
+  _getSignUpSubjectId,
+  _getCenterInfo,
+  _getOrderList,
+  _getHotCity,
+  _getCertificate,
+  _smsCode,
+  _XLogin,
+  _getRelatedSchool,
+  _setCenterInfo
 }

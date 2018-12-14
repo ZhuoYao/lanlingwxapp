@@ -88,5 +88,10 @@ Page({
         anjian:c
     })
     console.log(this.data);
+  },
+  gosubject(e){
+    wx.navigateTo({
+      url: '../enlist/enlist?subjectId=' + e.currentTarget.dataset.id,
+    })
   }
 })

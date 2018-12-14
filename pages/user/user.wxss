@@ -76,6 +76,12 @@ page{
   overflow: hidden;
 }
 .user .user-school >view:nth-child(3) > view:nth-child(1){
+    font-size: 24rpx;
+    color: #666666;
+    text-align: right;
+    flex: 1;
+}
+.user .user-school >view:nth-child(3) > .sign1{
     flex: 1;
     text-align: right;
     margin-right: 46rpx;
@@ -83,16 +89,30 @@ page{
     color: #999999;
 }
 .user .user-school >view:nth-child(3) > view:nth-child(2){
+    color: #358AFF;
+    font-size: 24rpx;
+    padding-right: 20rpx;
+}
+.user .user-school >view:nth-child(3) > view:nth-child(3){
+  width: 32rpx;
+  margin-right:36rpx;
+}
+.user .user-school >view:nth-child(3) > view:nth-child(3) > image{
+  width:32rpx;
+  margin-top:25rpx;
+}
+.user .user-school >view:nth-child(3) .sign{
   margin-right: 20rpx;
   width: 110rpx;
   height: 46rpx;
   text-align: center;
-  color: white;
+  color: white !important;
   background-color:#43E0FF;
-  font-size: 18rpx;
+  font-size: 18rpx !important;
   border-radius: 23rpx;
-  margin-top: 21rpx;
+  margin-top: 25rpx;
   line-height: 46rpx;
+  padding-right: 0rpx !important;
 }
 .user .user-other{
   width: 680rpx;
@@ -104,6 +124,16 @@ page{
   border-radius: 10rpx;
   overflow: hidden;
 }
+.user .user-other > view >button{
+  background-color: white;
+  padding: 0rpx;
+  display: flex;
+  width: 100%;
+  text-align: left;
+}
+.user .user-other > view >button::after{
+  border: none;
+}
 .user .user-other >view{
     width: 664rpx;
     margin-left: 16rpx;
@@ -114,18 +144,18 @@ page{
     line-height: 86rpx;
     overflow: hidden;
 }
-.user .user-other >view >image:nth-child(1){
+.user .user-other >view >image:nth-child(1), .user .user-other >view > button >image:nth-child(1){
     width: 32rpx;
     margin-left: 27rpx;
     margin-top: 25rpx;
 }
-.user .user-other >view >view{
+.user .user-other >view >view, .user .user-other >view > button >view{
   flex: 1;
   font-size: 30rpx;
   padding-left: 18rpx;
 }
-.user .user-other >view >image:nth-child(3){
+.user .user-other >view >image:nth-child(3), .user .user-other >view >button >image:nth-child(3){
   width: 32rpx;
   margin-right: 36rpx;
-  margin-top: 25rpx;
+  margin-top: 30rpx;
 }

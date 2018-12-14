@@ -37,7 +37,7 @@ page >image{
   font-size: 34rpx;
   padding: 51rpx 0 60rpx 0;
 }
-.registration-main >view:nth-child(2) ,.registration-main >view:nth-child(3), .registration-main >view:nth-child(4),.registration-main >view:nth-child(5){
+.registration-main >view:nth-child(2) ,.registration-main >view:nth-child(3), .registration-main >view:nth-child(4),.registration-main >view:nth-child(5), .registration-main >view:nth-child(6){
   display: flex;
   padding: 0 61rpx 0 78rpx;
   font-size: 28rpx;
@@ -45,8 +45,18 @@ page >image{
   border-bottom: 2rpx solid #EEEEEE;
   line-height: 87rpx; 
 }
-.registration-main >view:nth-child(2) >view, .registration-main >view:nth-child(3) >view, .registration-main >view:nth-child(4) >view,.registration-main >view:nth-child(5) >view:nth-child(1){
+.registration-main >view:nth-child(2) >view, .registration-main >view:nth-child(3) >view, .registration-main >view:nth-child(4) >view,.registration-main >view:nth-child(5) >view ,.registration-main >view:nth-child(6) >view:nth-child(1){
     width: 150rpx;
+}
+.registration-main >view:nth-child(5) >view{
+  width: 120rpx;
+}
+.registration-main >view:nth-child(5) {
+  height: auto;
+  padding-right: 0rpx;
+}
+.registration-main >view:nth-child(5)  radio{
+  transform: scale(0.8);
 }
 .registration-main >view:nth-child(2) >input, .registration-main >view:nth-child(3) >input, .registration-main >view:nth-child(4) >input{
   flex: 1;
@@ -54,32 +64,32 @@ page >image{
   font-size: 24rpx;
   height: 87rpx;
 }
-.registration-main >view:nth-child(5) >view:nth-child(2){
+.registration-main >view:nth-child(6) >view:nth-child(2){
   flex: 1;
   text-align: right;
   color: #BBBBBB;
   font-size: 24rpx;
 }
-.registration-main >view:nth-child(5) >image{
+.registration-main >view:nth-child(6) >image{
   width: 30rpx;
   margin-top: 30rpx;
   margin-left: 20rpx;
 }
-.registration-main >view:nth-child(6){
+.registration-main >view:nth-child(7){
   margin: 0 auto;
   margin-top: 36rpx;
   width: 500rpx;
 }
-.registration-main >view:nth-child(6) >image{
+.registration-main >view:nth-child(7) >image{
   width: 100%;
 }
-.registration-main >view:nth-child(7){
+.registration-main >view:nth-child(8){
   padding-top: 25rpx;
   font-size: 24rpx;
   text-align: center;
   color: #999999;
   padding-bottom: 20rpx;
 }
-.registration-main >view:nth-child(7) >text{
+.registration-main >view:nth-child(8) >text{
   color: #38A9FF;
 }

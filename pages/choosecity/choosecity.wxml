@@ -9,7 +9,7 @@
       </view>
       <view class='search-text'>
         <view>当前城市</view>
-        <view>佛山</view>
+        <view>{{currentcity}}</view>
       </view>
   </view>
   <view class='scroll-subject'>
@@ -19,7 +19,7 @@
         <view class="group-name">{{group.py}}</view>
         <view class=" group-subject">
           <view wx:for="{{group.citylist}}" wx:for-item="user" wx:for-index="idx">
-            <view class='subject-name'  bindtap='choosecity'>
+            <view class='subject-name'  bindtap='choosecity' data-city="{{user.city}}">
             <view>{{user.city}}</view>
             </view>
           </view>

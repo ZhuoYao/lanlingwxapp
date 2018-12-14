@@ -1,0 +1,52 @@
+/* pages/allevaluate/allevaluate.wxss */
+
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.evaluate {
+  width: 100%;
+  height: 100%;
+  background-color: #f4f4f4;
+  overflow: hidden;
+}
+
+.evaluate >scroll-view {
+  width: 100%;
+  height: 100%;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+ .main{
+  padding: 22rpx 100rpx 38rpx 42rpx;
+  background-color: white; 
+  display: flex;
+  margin-top: 3rpx;
+  overflow: hidden;
+}
+.main:nth-child(1){
+  margin-top: 0rpx;
+}
+.main .img{
+  width: 70rpx;
+  height: 70rpx;
+} 
+.main .content{
+  flex: 1;
+  overflow: hidden;
+}
+.main .content >view:nth-child(1){
+  font-size: 22rpx;
+  color: #858585;
+}
+.main .content >view:nth-child(2){
+  overflow: hidden;
+}
+.main .content >view:nth-child(3){
+  font-size: 26rpx;
+  color: #858585;
+}

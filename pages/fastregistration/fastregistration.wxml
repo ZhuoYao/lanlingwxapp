@@ -6,11 +6,12 @@
   </view>
   <view class='registration-main'>
     <view class='title'>提交后学校会联系您</view>
-    <view><view>真实姓名</view><input placeholder='输入您的姓名'></input></view>
-    <view><view>联系电话</view><input placeholder='输入您的联系电话'></input></view>
-    <view><view>身份证号</view><input placeholder='输入您的身份证号'></input></view>
+    <view><view>真实姓名</view><input placeholder='输入您的姓名' bindinput='getuname'></input></view>
+    <view><view>联系电话</view><input placeholder='输入您的联系电话' bindinput='getphone'></input></view>
+    <view><view>身份证号</view><input placeholder='输入您的身份证号' bindinput='getidcard'></input></view>
+    <view><view>选择类别</view><radio-group bindchange="getcategory"><radio value='1' color='#358AFF' checked='true'>人社类</radio><radio value='2' color='#358AFF'>交通类</radio><radio value='3' color='#358AFF'>安监类</radio></radio-group></view>
     <view bindtap='choosesubject'><view>选择科目</view><view>{{subjectName}}</view><image src='../../img/arrow.png' mode='widthFix'></image></view>
-    <view> <image src='../../img/regsubmit.png' mode='widthFix'></image></view>
+    <view bindtap='goreg'> <image src='../../img/regsubmit.png' mode='widthFix'></image></view>
     <view>提交表示已阅读并同意<text>《服务协议》</text> </view>
   </view>
 </view>

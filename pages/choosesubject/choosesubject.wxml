@@ -3,7 +3,7 @@
   <view class='searchsubject {{type == 1?"":"type2"}}'>
       <view class='search'>
         <view><image src='../../img/search.png'></image>
-        <input placeholder="输入科目"></input>
+        <input placeholder="输入科目" bindinput='search'></input>
         </view>
         <view>取消</view>
       </view>
@@ -40,7 +40,7 @@
   <view class='mask {{maskshow?"maskshow":""}}'>
       <view>
         <view class='content'>报名解锁题库!</view>
-        <view class='buttonbox'><view bindtap='cancellock'>取消</view><view>确定</view></view>
+        <view class='buttonbox'><view bindtap='cancellock'>取消</view><view catchtap='gosignup'>确定</view></view>
       </view>
   </view>
 </view>

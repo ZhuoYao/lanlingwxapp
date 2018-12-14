@@ -1,0 +1,28 @@
+<!--pages/mycard/mycard.wxml-->
+<view class='card'>
+  <view class='cardimg'>
+    <swiper previous-margin="20rpx" next-margin="20rpx" bindchange="changeswiper">
+      <block wx:for="{{carddata}}" wx:key="item" wx:for-index="index">
+      <swiper-item>
+      <view class='imgbox'>
+      <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542609906222&di=57df3b29facfb145563395fb1d58f256&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201501%2F02%2F20150102204647_dj2t8.jpeg' ></image>
+      <view class='name'>{{item.userName}}<text>{{item.studentName}}</text></view>
+      <view class='idcard'>证件号码:{{item.certificateNumber}}<view>有效期至:{{item.certificateEndDate}}</view></view>
+      </view>
+      </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='cardmain'>
+      <view><view>证件名称</view><text>{{currentdata.certificateName}}</text></view>
+      <view><view>下次复审时间</view><text>{{currentdata.reviewDate}}</text></view>
+      <view><view>证书到期时间</view><text>{{currentdata.certificateEndDate}}</text></view>
+      <view><view>考试地点</view><text>{{currentdata.examLocation}}</text></view>
+      <view><view>考试结果</view><text wx:if="{{currentdata.examState == 1}}">合格</text>
+      <text wx:if="{{currentdata.examState == 2}}">不合格</text>
+      <text wx:if="{{currentdata.examState == 3}}">待考</text>
+      <text wx:if="{{currentdata.examState == 4}}">缺考</text>
+      </view>
+      <view><view>考试时间</view><text>{{currentdata.examTime}}</text></view>
+  </view>
+</view>

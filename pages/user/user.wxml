@@ -2,10 +2,13 @@
 <view class='user'>
     <view class='user-icon' bindtap='goperson'>
     <view>
-      <image src='../../img/usericon.png'></image>
+      <image src='../../img/usericon.png' wx:if="{{!userdata.username}}"></image>
+      <image wx:else src='{{userdata.imgUrl}}'></image>
       <view>
-        <view>未登录</view>
-        <view>点击登录账号</view>
+        <view wx:if="{{userdata.username}}">{{userdata.username}}</view>
+        <view wx:else>未登录</view>
+        <view wx:if="{{userdata.username}}">查看个人主页或编辑资料</view>
+        <view wx:else>点击登录账号</view>
       </view>
       <image src='../../img/arrow.png' mode="widthFix"></image>
     </view>
@@ -14,15 +17,20 @@
       <image src='../../img/mechanismicon.png' mode='widthFix'></image>
       <view>我的机构</view>
       <view>
-      <view>还没有关联学校</view>
-      <view>立即关联</view>
+      <view wx:if="{{bindschool.schoolName}}">已关联:</view>
+      <view wx:else class='sign1'>还没有关联学校</view>
+      <view wx:if="{{bindschool.schoolName}}" bindtap='goschool' data-id="{{bindschool.id}}">{{bindschool.schoolName}}</view>
+      <view wx:else class='sign' bindtap='gosign'>立即关联</view>
+      <view wx:if="{{userdata.schoolName}}">
+        <image src='../../img/arrow.png' mode="widthFix"></image>
+      </view>
       </view>
     </view>
     <view class='user-other'>
-      <view><image src='../../img/ordericon.png' mode="widthFix"></image><view>我的订单</view><image src='../../img/arrow.png' mode="widthFix"></image></view>
-      <view><image src='../../img/certificatesicon.png' mode="widthFix"></image><view>我的证件</view><image src='../../img/arrow.png' mode="widthFix"></image></view>
-      <view><image src='../../img/opinionicon.png' mode="widthFix"></image><view>意见反馈</view><image src='../../img/arrow.png' mode="widthFix"></image></view>
-      <view><image src='../../img/aboutusicon.png' mode="widthFix"></image><view>关于我们</view><image src='../../img/arrow.png' mode="widthFix"></image></view>
+      <view bindtap='goorder'><image src='../../img/ordericon.png' mode="widthFix"></image><view>我的订单</view><image src='../../img/arrow.png' mode="widthFix"></image></view>
+      <view bindtap='gomycard'><image src='../../img/certificatesicon.png' mode="widthFix"></image><view>我的证件</view><image src='../../img/arrow.png' mode="widthFix"></image></view>
+      <view><button open-type='feedback'><image src='../../img/opinionicon.png' mode="widthFix"></image><view>意见反馈</view><image src='../../img/arrow.png' mode="widthFix"></image></button></view>
+      <view bindtap='goaboutus'><image src='../../img/aboutusicon.png' mode="widthFix"></image><view>关于我们</view><image src='../../img/arrow.png' mode="widthFix"></image></view>
     </view>
 <bottom-nav nav-index='2'></bottom-nav>
 </view>

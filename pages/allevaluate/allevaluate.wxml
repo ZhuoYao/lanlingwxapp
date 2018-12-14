@@ -1,0 +1,13 @@
+<!--pages/allevaluate/allevaluate.wxml-->
+<view class='evaluate'>
+  <scroll-view scroll-y="true">
+      <view wx:for="{{evaluatelist}}" wx:key="item" wx:for-index="index" class='main'>
+          <view class='img'></view>
+          <view class='content'>
+              <view>{{item.studentName}}</view>
+              <view><wux-rater slot="footer" value="{{item.star}}" fontSize="{{15}}" disabled controlled="true" /></view>
+              <view>{{item.content}}</view>
+          </view>
+      </view>
+  </scroll-view>
+</view>

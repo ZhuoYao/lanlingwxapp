@@ -8,58 +8,25 @@ Page({
    */
   data: {
     piclength:2,
-    schooldetail: {
-      "schoolPic": [
-        {
-          "picUrl": "http://pic.nataliee.top/upload/20181130/f90bae7cf9d6475195025b656c6f493f.jpeg",
-          "sortOrder": 1,
-          "id": 63
-        },
-        {
-          "picUrl": "http://pic.nataliee.top/upload/20181130/18d41f8223f2418f94620f636ce3c71c.jpeg",
-          "sortOrder": 0,
-          "id": 62
-        }
-      ],
-      "star": 5,
-      "schoolSubject": [
-        {
-          "subjectPrice": 6666,
-          "type": "交通类",
-          "signSubjectName": "测试",
-          "signUpSubjectId": 13
-        },
-        {
-          "subjectPrice": 1000,
-          "type": "人社类",
-          "signSubjectName": "熔化焊接与热切割作业 - 初训",
-          "signUpSubjectId": 12
-        }
-      ],
-      "schoolDetail": {
-        "schoolPhone": "88682348",
-        "cityName": "佛山",
-        "schoolId": 1,
-        "latitude": "22.9818439999",
-        "schoolDetail": "<p>佛山市高明区育安职业培训学校（前身佛山市高明区育人职业培训学校）!</p>",
-        "schoolName": "佛山市育安职业培训学校",
-        "schoolLocaltion": "高明区永安路016号",
-        "longitude": "113.1097412109"
-      }
-    },
+    schooldetail: {},
     picurl:[],
-    maskshow:false
+    maskshow:false,
+    schoolid:'',
+    star:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // _getSchoolDetail({schoolId:1}).then(data => {
+    // console.log(options);
+    // _getSchoolDetail({schoolId:options.schoolid}).then(data => {
     //     console.log(data)
     // })
-    app.setallsubject(this.data.schooldetail.schoolSubject);
-    this.getimgurllist(this.data.schooldetail.schoolPic);
+    this.setData({
+        schoolid: options.schoolid,
+        star: 2
+    })
     this.getaddress();
   },
 
@@ -134,7 +101,17 @@ Page({
         picurl : url
     })
   },
-  getaddress(e){
+  getdetail(lat,lng){
+    _getSchoolDetail({ schoolId: this.data.schoolid, longitude: lng, latitude:lat}).then(data => {
+        // console.log(data)
+        this.setData({
+          schooldetail : data.data
+        })
+      app.setallsubject(this.data.schooldetail.schoolSubject);
+      this.getimgurllist(this.data.schooldetail.schoolPic);
+    })
+  },
+  getaddress(data){
     let lat1 = '';
     let lng1 = '';
     let address= '';
@@ -143,8 +120,8 @@ Page({
       success: function(res) {
         lat1 = res.latitude;
         lng1 = res.longitude;
+        _this.getdetail(lat1,lng1);
         // address = _this.getDistance(lat1, lng1, parseFloat( _this.data.schooldetail.schoolDetail.latitude), parseFloat( _this.data.schooldetail.schoolDetail.longitude));
-        console.log(address);
       },
     })
   },
@@ -167,8 +144,8 @@ Page({
     wx.openLocation({
       latitude: Number(this.data.schooldetail.schoolDetail.latitude),
       longitude: Number(this.data.schooldetail.schoolDetail.longitude),
-      name:'佛山市育安职业培训学校',
-      address: '高明区永安路016号'
+      name: this.data.schooldetail.schoolDetail.schoolName,
+      address: this.data.schooldetail.schoolDetail.schoolLocation
     })
   },
   goallsubject(e){
@@ -193,7 +170,18 @@ Page({
   },
   makecall(){
     wx.makePhoneCall({
-      phoneNumber: '18814129287',
+      phoneNumber: this.data.schooldetail.schoolDetail.schoolPhone,
+    })
+  },
+  goevaluate(e){
+      wx.navigateTo({
+        url: '../allevaluate/allevaluate?schoolid='+this.data.schooldetail.schoolDetail.schoolId,
+      })
+  },
+  gorichschool(e){
+    app.setrichschool(this.data.schooldetail.schoolDetail.schoolDetail)
+    wx.navigateTo({
+      url: '../richschool/richshcool?schoolId='+this.data.schoolid,
     })
   }
 })

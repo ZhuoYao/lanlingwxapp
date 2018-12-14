@@ -1,4 +1,5 @@
 /* pages/notice/notice.wxss */
+@import "../../wxParse/wxParse.wxss";
 page{
   width: 100%;
   height: 100%;
@@ -36,4 +37,24 @@ page{
 .notice-nav .ischoose1{
   font-size: 32rpx;
   color: #358AFF;
+}
+.notice-main{
+  width: 100%;
+  height: calc(100% - 90rpx);
+  overflow-y: auto;
+}
+.notice-main .imgbox{
+  margin: 0 auto;
+  width: 650rpx;
+  height: 300rpx;
+}
+.notice-main .title{
+  padding:26rpx 0  31rpx 48rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.wxParse-p{
+  font-size: 24rpx;
+  width: 527rpx;
+  margin-left: 101rpx;
 }

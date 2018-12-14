@@ -1,0 +1,67 @@
+/* pages/mycard/mycard.wxss */
+page{
+  width: 100%;
+ height: 100%;
+}
+.card{
+  width: 100%;
+  height: 100%;
+}
+.cardimg{
+  width: 100%;
+  height: 455rpx;
+  background-color: #F5F5F5;
+  overflow: hidden;
+}
+.cardimg > swiper{
+  padding-left: 50rpx;
+  height: 350rpx;
+  margin-top: 26rpx;
+}
+.cardimg > swiper .imgbox{
+  padding-right: 30rpx;
+  height: 100%;
+  position: relative;
+}
+.cardimg > swiper .imgbox image{
+  width: 100%;
+  height: 100%;
+}
+.cardimg > swiper .imgbox .name{
+  position: absolute;
+  top: 51rpx;
+  left: 44rpx;
+  color: black;
+  font-size: 40rpx;
+  width: 150rpx;
+  line-height: 35rpx;
+}
+.cardimg > swiper .imgbox .name >text{
+  font-size: 20rpx;
+}
+.cardimg > swiper .imgbox .idcard{
+  position: absolute;
+  top: 250rpx;
+  left: 50rpx;
+  font-size: 20rpx;
+  color: white;
+  width: 300rpx;
+}
+.cardmain{
+  width: 100%;
+  height: calc(100% - 455rpx);
+  background-color: #F5F5F5;
+  overflow-y: auto;
+}
+.cardmain > view{
+  display: flex;
+  padding: 0 37rpx 0 57rpx;
+  font-size: 26rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: white;
+  margin-bottom: 3rpx;
+}
+.cardmain > view >view{
+  flex: 1;
+}

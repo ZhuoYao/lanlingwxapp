@@ -13,4 +13,9 @@
           <image src='../../img/pushimg.png' bindtap='imgchoose' wx:if="{{imgnum < 4}}"></image>
        </view>
     </view>
+    <view class='phone'>
+      <view>联系电话</view>
+      <input placeholder='选填,以便我们可以联系到您'></input>
+    </view>
+    <view class='submit'>提交</view>
 </view>

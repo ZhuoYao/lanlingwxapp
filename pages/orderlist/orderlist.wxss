@@ -1,0 +1,86 @@
+/* pages/orderlist/orderlist.wxss */
+page{
+  width: 100%;
+  height: 100%;
+   overflow: hidden;
+}
+.orderlist{
+  width: 100%;
+  height: 100%;
+   overflow: hidden;
+   background-color: #F4F4F4;
+}
+.orderlist scroll-view{
+  width: 100%;
+  height: calc(100% -15rpx);
+  margin-top: 15rpx;
+}
+::-webkit-scrollbar{
+width: 0;
+height: 0;
+color: transparent;
+}
+.listitem{
+  height: 240rpx;
+  background-color: white;
+  margin-top: 15rpx;
+  overflow: hidden;
+}
+.listitem:nth-child(1){
+  margin-top: 0rpx;
+}
+.listitem-top{
+  height: 150rpx;
+  padding: 0 35rpx;
+  display: flex;
+}
+.listitem-top >view:nth-child(1){
+  width: 110rpx;
+  height: 44rpx;
+  border: 1rpx solid #358AFF;
+  border-radius: 23rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #358AFF;
+  line-height: 44rpx;
+  margin-top: 52rpx;
+}
+.listitem-top >view:nth-child(2){
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 150rpx;
+  font-size: 30rpx;
+  color:#666666;
+  margin-left: 24rpx;
+}
+.listitem-top >view:nth-child(3){
+  font-size: 28rpx;
+  color: #666666;
+  line-height: 150rpx;
+}
+.listitem-top >view:nth-child(3) >text{
+  font-size: 24rpx;
+}
+.listitem-state{
+  height: 88rpx;
+  padding: 0 35rpx;
+  border-top: 2rpx solid #F4F4F4;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.listitem-state >view{
+  width: 140rpx;
+  height: 52rpx;
+  border-radius: 26rpx;
+  border:1rpx solid #C1C1C1;
+  font-size: 28rpx;
+  color: #666666;
+  text-align: center;
+  line-height: 52rpx;
+  margin-left: 28rpx;
+  margin-top: 17rpx;
+}
+.evaluate{
+  color: #358AFF !important;
+}

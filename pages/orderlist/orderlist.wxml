@@ -1,0 +1,21 @@
+<!--pages/orderlist/orderlist.wxml-->
+<view class='orderlist'>
+      <scroll-view scroll-y="true">
+          <view wx:for="{{orderlist}}" wx:key="item" wx:for-index="index" class='listitem'>
+          <view class='listitem-top'>
+            <view wx:if="{{item.type == '1'}}">人社类</view>
+            <view wx:if="{{item.type == '2'}}">交通类</view>
+            <view wx:if="{{item.type == '3'}}">安监类</view>
+              <view>{{item.subjectName}}</view>
+              <view><text>¥</text>{{item.payMoney}}元</view>
+          </view>
+          <view class='listitem-state'>
+          <view wx:if="{{item.isEvaluate == '1' && item.state == '2'}}" class='evaluate' bindtap='goevaluate' data-orderid="{{item.id}}">评价</view>
+            <view wx:if="{{item.state == '1'}}">未支付</view>
+            <view wx:if="{{item.state == '2'}}">已支付</view>
+            <view wx:if="{{item.state == '3'}}">已过期</view>
+            <view wx:if="{{item.state == '4'}}">已退款</view>
+          </view>
+          </view>
+      </scroll-view>
+</view>

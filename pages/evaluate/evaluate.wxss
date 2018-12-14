@@ -1,1 +1,85 @@
 /* pages/evaluate/evaluate.wxss */
+
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.evaluate {
+  width: 100%;
+  min-height: 100%;
+  overflow-y: auto;
+  background-color: #f4f4f4;
+}
+
+.title {
+  padding-left: 35rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 36rpx;
+  background-color: white;
+  margin-top: 1rpx;
+}
+
+.rater {
+  display: flex;
+  padding: 0 48rpx 0 37rpx;
+  height: 100rpx;
+  margin-top: 1rpx;
+  font-size: 30rpx;
+  line-height: 100rpx;
+  background-color: white;
+}
+
+.rater >view:nth-child(1) {
+  flex: 1;
+}
+
+.text-img {
+  margin-top: 1rpx;
+  padding: 23rpx 35rpx 50rpx 35rpx;
+  overflow: hidden;
+  background-color: white;
+}
+
+.text-img textarea {
+  width: 100%;
+  font-size: 24rpx;
+  color: #cfcfcf;
+  margin-bottom: 70rpx;
+}
+
+.text-img image {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.pushevaluate {
+  background-color: white;
+  padding: 36rpx;
+  margin-top: 1rpx;
+}
+
+.pushevaluate >view:nth-child(1) {
+  display: flex;
+  font-size: 24rpx;
+  color: #cfcfcf;
+}
+
+.pushevaluate >view:nth-child(1) >view {
+  flex: 1;
+}
+
+.pushevaluate >view:nth-child(2) {
+  margin: 0 auto;
+  margin-top: 150rpx;
+  margin-bottom: 70rpx;
+  width: 500rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  background-color: #358aff;
+  font-size: 26rpx;
+  color: white;
+  text-align: center;
+  border-radius: 35rpx;
+}

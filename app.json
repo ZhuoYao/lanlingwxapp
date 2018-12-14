@@ -1,13 +1,11 @@
 {
   "pages": [
-    "pages/opinion/opinion",
     "pages/signup/signup",
     "pages/index1/main",
     "pages/bottomnav/bottomnav",
     "pages/index/index",
     "pages/logs/logs",
     "pages/recruit/recruit",
-    "pages/user/user",
     "pages/score/score",
     "pages/practice/practice",
     "pages/examdata/examdata",
@@ -25,7 +23,16 @@
     "pages/allsubject/allsubject",
     "pages/enlist/enlist",
     "pages/evaluate/evaluate",
-    "pages/pernsonaldata/personaldata"
+    "pages/pernsonaldata/personaldata",
+    "pages/opinion/opinion",
+    "pages/orderlist/orderlist",
+    "pages/allevaluate/allevaluate",
+    "pages/mycard/mycard",
+    "pages/login/login",
+    "pages/regcompleted/regcompleted",
+    "pages/richschool/richshcool",
+    "pages/user/user",
+    "pages/aboutus/aboutus"
   ],
   "window": {
     "backgroundTextStyle": "light",

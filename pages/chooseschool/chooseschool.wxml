@@ -3,17 +3,27 @@
   <view class='searchtop'>
      <view class='search'>
         <view><image src='../../img/search.png'></image>
-        <input placeholder="输入培训机构"></input>
+        <input placeholder="输入培训机构" bindinput='getsearch' value="{{searchText}}"></input>
         </view>
-        <view>取消</view>
+        <view bindtap='resetinput'>取消</view>
       </view>
       <view class='searchdown'>
         <view class='searchtext'>热门搜索</view>
         <view class='searchhot'>
-          <view>蓝领技术学院</view>
-          <view>蓝领技术学院</view>
-          <view>蓝领技术学院</view>
+          <view wx:for="{{hotschool}}" wx:key="item" wx:for-index="index" data-id="{{item.schoolId}}" bindtap='goschooldetail'>{{item.schoolName}}</view>
         </view>
       </view>
       </view>
+      <scroll-view scroll-y="true">
+          <view wx:for="{{schoollist}}" wx:key="item" class='schoollist' bindtap='goschooldetail' data-id="{{item.schoolId}}">
+      <view><image src='{{item.schoolLogo}}'></image></view>
+      <view>
+       <view>{{item.schoolName}}</view>
+       <view><wux-rater slot="footer" value="{{item.star}}" fontSize="{{18}}" disabled controlled="true" /></view>
+       <view>¥{{item.price}}</view>
+      </view>
+      <view>{{item.distance}}km</view>
+      <view> <image src='../../img/arrow.png' mode='widthFix'></image> </view>
+  </view>
+      </scroll-view>
 </view>

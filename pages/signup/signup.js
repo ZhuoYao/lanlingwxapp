@@ -1,5 +1,8 @@
 // pages/ signup/signup.js
-import { _getSchoolList, _getSchool} from '../../utils/request.js'
+import {
+  _getSchoolList,
+  _getSchool
+} from '../../utils/request.js'
 var app = getApp();
 Page({
 
@@ -13,138 +16,130 @@ Page({
     interval: 5000,
     duration: 500,
     categoryindex: 0,
-    cityname:'城市',
-    menufix:false,
-    maskshow:false,
-    alltype:0,
-    distance:0,
-    priced:0,
-    evaluate:0,
-    screen:0,
-    schoollist: [{
-      "star": 5,
-      "price": 3,
-      "schoolId": 1,
-      "latitude": null,
-      "schoolName": "佛山市育安职业培训学校",
-      "schoolLogo": "http://pcojhmbte.bkt.clouddn.com/upload/20181105/5396934fe9854af781c49b7bcec150b3.png",
-      "longitude": null
-    },
-      {
-        "star": 2.5,
-        "price": null,
-        "schoolId": 2,
-        "latitude": null,
-        "schoolName": "安联",
-        "schoolLogo": null,
-        "longitude": null
-      }]
+    cityname: '城市',
+    menufix: false,
+    maskshow: false,
+    alltype: 1,
+    distance: 0,
+    priced: 0,
+    evaluate: 0,
+    lat: 0,
+    lng: 0,
+    screen: 0,
+    schoollist: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     this.setData({
-      cityname: app.globalData.city ? app.globalData.city:'城市'
+      cityname: app.globalData.city ? app.globalData.city : '城市'
     })
-    if(this.data.cityname){
-      // this.getschoollist({ city:this.data.cityname});
+    if (this.data.cityname != '城市') {
+      this.setlocation();
+    }else{
+      
     }
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
-  onPageScroll: function (e) {
+  onPageScroll: function(e) {
     // console.log(e);//{scrollTop:99}
     const query = wx.createSelectorQuery()
     const _this = this;
     query.select('#school').boundingClientRect()
     query.selectViewport().scrollOffset()
-    query.exec(function (res) {
-      res[0].top;       // #the-id节点的上边界坐标
+    query.exec(function(res) {
+      res[0].top; // #the-id节点的上边界坐标
       res[1].scrollTop // 显示区域的竖直滚动位置
-      if (res[0].top <= 0){
-          _this.setData({
-            menufix: true
-          })
-      }else{
+      if (res[0].top <= 0) {
+        _this.setData({
+          menufix: true
+        })
+      } else {
         _this.setData({
           menufix: false
         })
       }
     })
   },
-  changecity(e){
+  changecity(e) {
     wx.navigateTo({
       url: '../choosecity/choosecity',
     })
   },
-  showchoosetype(e){
+  showchoosetype(e) {
     this.setData({
       maskshow: true
     })
   },
-  move(e){
+  move(e) {
 
   },
-  getschoollist(data){
+  getschoollist(data) {
+    wx.showLoading({
+      title: '',
+      mask: true
+    })
     _getSchool(data).then(data => {
+      wx.hideLoading();
       this.setData({
         schoollist: data.data
       })
     })
   },
-  changetype(e){
+  changetype(e) {
     // console.log(e.currentTarget.dataset.id);
     let basedata = 0;
-    switch(e.currentTarget.dataset.id){
+    switch (e.currentTarget.dataset.id) {
       case '0':
         this.setData({
           alltype: 1,
@@ -152,16 +147,16 @@ Page({
           priced: 0,
           evaluate: 0
         })
-      break;
+        break;
       case '1':
         basedata = this.data.distance;
-        if(basedata){
-          if(basedata == 1){
+        if (basedata) {
+          if (basedata == 1) {
             basedata = 2
-          }else{
+          } else {
             basedata = 1
           }
-        }else{
+        } else {
           basedata = 1
         }
         this.setData({
@@ -170,7 +165,7 @@ Page({
           priced: 0,
           evaluate: 0
         })
-      break;
+        break;
       case '2':
         basedata = this.data.priced;
         if (basedata) {
@@ -188,7 +183,7 @@ Page({
           priced: basedata,
           evaluate: 0
         })
-      break;
+        break;
       case '3':
         basedata = this.data.evaluate;
         if (basedata) {
@@ -206,46 +201,148 @@ Page({
           priced: 0,
           evaluate: basedata
         })
-      break;
+        break;
       case '4':
-      this.setData({
-        screen: !this.data.screen
-      })
-      break;
+        this.setData({
+          screen: !this.data.screen
+        })
+        break;
     }
   },
-  hidemask(){
-     this.setData({
-       maskshow : !this.data.maskshow
-     })
+  hidemask() {
+    this.setData({
+      maskshow: !this.data.maskshow
+    })
   },
-  notapfather(e){ //点击本元素的时候,不触发父元素mask的tap事件
+  notapfather(e) { //点击本元素的时候,不触发父元素mask的tap事件
 
   },
-  changekind(e){
-      this.setData({
-        categoryindex: e.currentTarget.dataset.id
-      })
-      console.log(this.data.categoryindex)
+  changekind(e) {
+    this.setData({
+      categoryindex: e.currentTarget.dataset.id
+    })
+    console.log(this.data.categoryindex)
   },
-  gosignup(e){
+  gosignup(e) {
     wx.navigateTo({
       url: '../fastregistration/fastregistration',
     })
   },
-  chooseshool(e){
+  chooseshool(e) {
     wx.navigateTo({
-      url: '../chooseschool/chooseschool',
+      url: '../chooseschool/chooseschool?lat='+this.data.lat+'&lng='+this.data.lng,
     })
   },
-  gonotice(e){
+  gonotice(e) {
     wx.navigateTo({
       url: '../notice/notice',
     })
   },
-  goschooldetail(e){
+  goschooldetail(e) {
     wx.navigateTo({
-      url: '../schooldetail/schooldetail?schoolid=1',
+      url: '../schooldetail/schooldetail?schoolid='+e.currentTarget.dataset.id,
     })
-  }
+  },
+  setlocation(e) {
+    let _this = this;
+    wx.getLocation({
+      success: function(res) {
+        _this.setData({
+          lat: res.latitude,
+          lng: res.longitude
+        })
+        _this.getschoollist({
+          city: _this.data.cityname,
+          longitude: _this.data.lng,
+          latitude: _this.data.lat
+        });
+      },
+    })
+  },
+  resetscreen(e) {
+    this.setData({
+      alltype: 1,
+      distance: 0,
+      priced: 0,
+      evaluate: 0,
+      categoryindex: 0
+    })
+  },
+  submitscreen(e) {
+      let data = {}
+      if(this.data.alltype){
+        if (this.data.categoryindex){
+          data = {
+            city: this.data.cityname,
+            longitude: this.data.lng,
+            latitude: this.data.lat,
+            type:this.data.categoryindex
+            }
+        }else{
+          data = {
+            city: this.data.cityname,
+            longitude: this.data.lng,
+            latitude: this.data.lat
+          } 
+        }
+      }
+    if (this.data.distance) {
+      if (this.data.categoryindex) {
+        data = {
+          city: this.data.cityname,
+          longitude: this.data.lng,
+          latitude: this.data.lat,
+          location: this.data.distance,
+          type: this.data.categoryindex
+        }
+      } else {
+        data = {
+          city: this.data.cityname,
+          longitude: this.data.lng,
+          latitude: this.data.lat,
+          location: this.data.distance
+        }
+      }
+    }
+    if (this.data.priced) {
+      if (this.data.categoryindex) {
+        data = {
+          city: this.data.cityname,
+          longitude: this.data.lng,
+          latitude: this.data.lat,
+          price: this.data.priced,
+          type: this.data.categoryindex
+        }
+      } else {
+        data = {
+          city: this.data.cityname,
+          longitude: this.data.lng,
+          latitude: this.data.lat,
+          price: this.data.priced
+        }
+      }
+    }
+    if (this.data.evaluate) {
+      if (this.data.categoryindex) {
+        data = {
+          city: this.data.cityname,
+          longitude: this.data.lng,
+          latitude: this.data.lat,
+          evaluate: this.data.evaluate,
+          type: this.data.categoryindex
+        }
+      } else {
+        data = {
+          city: this.data.cityname,
+          longitude: this.data.lng,
+          latitude: this.data.lat,
+          evaluate: this.data.evaluate
+        }
+      }
+    }
+    this.getschoollist(data);
+    this.setData({
+      maskshow: false
+    })
+  } 
 })

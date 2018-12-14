@@ -10,26 +10,21 @@ Page({
     toView: 'A',
     viewdata: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
     cityname:'',
-    citydata: [
-      {
-        "city": "佛山",
-        "letter": "F"
-      },
-      {
-        "city": "广州",
-        "letter": "G"
-      }
-    ]
+    currentcity:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    // _getCity().then(data => {
-    //     console.log(data);
-    // })
-    this.test(this.data.citydata);
+    this.setData({
+      currentcity: app.globalData.city
+    })
+    _getCity().then(data => {
+        // console.log(data);
+        this.test(data.data)
+    })
+    // this.test(this.data.citydata);
   },
 
   /**
@@ -119,6 +114,18 @@ Page({
     console.log(data2);
     this.setData({
       citydata: data2
+    })
+  },
+  choosecity(e){
+      // console.log(e.currentTarget.dataset.city);
+    app.changecity(e.currentTarget.dataset.city);
+    let pages = getCurrentPages(); //当前页面
+    let prevPage = pages[pages.length - 2]; //上一页面
+    prevPage.setData({
+      cityname: e.currentTarget.dataset.city,
+    })
+    wx.navigateBack({
+      delta: 1
     })
   }
 })

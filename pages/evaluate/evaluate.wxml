@@ -1,2 +1,16 @@
 <!--pages/evaluate/evaluate.wxml-->
-<text>pages/evaluate/evaluate.wxml</text>
+<view class='evaluate'>
+  <view class='title'>评价</view>
+  <view class='rater'><view>服务</view><view><wux-rater controlled value="{{ value1 }}" bind:change="onChange" allowTouchMove="true"  data-id='1' /></view></view>
+  <view class='rater'><view>收费</view><view><wux-rater controlled value="{{ value2 }}" bind:change="onChange" allowTouchMove="true"  data-id='2' /></view></view>
+  <view class='rater'><view>教学</view><view><wux-rater controlled value="{{ value3 }}" bind:change="onChange" allowTouchMove="true" data-id='3' /></view></view>
+  <view class='rater'><view>环境</view><view><wux-rater controlled value="{{ value4 }}" bind:change="onChange" allowTouchMove="true" data-id='4' /></view></view>
+  <view class='text-img'>
+    <textarea auto-height='true' placeholder='分享文字'></textarea>
+    <image mode="widthFix" src='../../img/pushimg.png'></image>
+  </view>
+  <view class='pushevaluate'>
+    <view><view>匿名点评</view><switch bindchange="switchChange" color='#358AFF' /></view>
+    <view>提交</view>
+  </view>
+</view>

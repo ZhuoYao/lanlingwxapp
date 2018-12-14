@@ -77,7 +77,7 @@ swiper-item .slide-image{
   width: 30rpx;
   margin-right: 38rpx;
   margin-left: 30rpx;
-  margin-top: 26rpx;
+  margin-top: 29rpx;
 }
 .school{
   width: 100%;
@@ -126,6 +126,8 @@ swiper-item .slide-image{
 }
 .schoollist >view:nth-child(2) >view:nth-child(1){
   font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .schoollist >view:nth-child(2) >view:nth-child(3){
   font-size: 32rpx;
@@ -133,10 +135,14 @@ swiper-item .slide-image{
   font-weight: 600;
 }
 .schoollist >view:nth-child(3){
-    width: 50rpx;
-    overflow: hidden;   
+    width: 100rpx;
+    text-align: left;
+    overflow: hidden;
+    font-size: 28rpx;
+    margin-top: 38rpx;
+    color: #7C7C7C;
 }
-.schoollist >view:nth-child(3) >image{
+.schoollist >view:nth-child(4) >image{
     margin-top:75rpx; 
     width: 50rpx;
 }

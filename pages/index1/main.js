@@ -85,6 +85,11 @@ Page({
       })
   },
   gopractice(e){
+    if(app.globalData.subjectId == ''){
+        wx.navigateTo({
+          url: '../choosesubject/choosesubject',
+        })
+    }else{
     switch(e.currentTarget.dataset.id){
       case '1' :
         wx.showToast({
@@ -158,11 +163,18 @@ Page({
       })
       break;
     }
+    }
   },
   goexam(){
+    if(app.globalData.subjectId == ''){
+      wx.navigateTo({
+        url: '../choosesubject/choosesubject',
+      })
+    }else{
     wx.navigateTo({
       url: '../examdata/examdata?subjectId='+this.data.subjectId,
     })
+    }
   },
   goscore(){
     wx.navigateTo({

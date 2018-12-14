@@ -5,7 +5,17 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    let _this =this;
+    wx.getStorage({
+      key: 'token',
+      success: function(res) {
+        console.log(res);
+        _this.globalData.token = res.data 
+      },
+      fail : function(error){
+        console.log(error);
+      }
+    })
     // 登录
     wx.login({
       success: res => {
@@ -47,6 +57,13 @@ App({
           this.globalData.practicelist[data.num].isCollection = data.isCollection;
          break;
       }
+  },
+  changetoken(data){
+    this.globalData.token = data;
+    wx.setStorage({
+      key: 'token',
+      data: data,
+    })
   },
   changesubject(data){
     this.globalData.subjectName = data.subjectName;
@@ -95,9 +112,14 @@ App({
   setallsubject(data){
       this.globalData.allsubject = data;
   },
+  setrichschool(data){
+    console.log(data);
+      this.globalData.richschool = data;
+  },
 
   globalData: {
     userInfo: null,
+    token:'',
     practicemenu:[],
     practicelist:[],
     subjectName:'',
@@ -107,6 +129,7 @@ App({
     exammenu:[],
     examlist:[],
     city:'佛山',
-    allsubject:[]
+    allsubject:[],
+    richschool:''
   }
 })

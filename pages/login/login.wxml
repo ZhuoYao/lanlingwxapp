@@ -1,0 +1,11 @@
+<!--pages/login/login.wxml-->
+<view class='login'>
+  <image src='../../img/login_logo.png' mode='widthFix'></image>
+  <view class='login-main'>
+    <view class='uname'><input placeholder='请输入手机号' bindinput='getphone'></input></view>
+    <view class='password'><input placeholder='请输入短信验证码' bindinput='getsms'></input><button disabled='{{disable}}' bindtap='getcode'>{{time}}</button></view>
+    <view class='login-button' bindtap='gologin'>
+      登录
+    </view>
+  </view>
+</view>

@@ -7,9 +7,9 @@
     <view class='school-name'>
     {{schooldetail.schoolDetail.schoolName}}
     </view>
-    <view class='location' bindtap='gomap'><image src='../../img/locationicon.png' mode='widthFix'></image><view>广东省佛山市禅城区123123</view><text>1.8km</text><image src='../../img/arrow.png' mode='widthFix'></image></view>
-    <view class='jianjie'><view>简介：蓝领职业技术学院是一家</view><text>全部简介</text><image src='../../img/arrow.png' mode='widthFix'></image></view>
-    <view class='star'><view><wux-rater slot="footer" default-value="{{schooldetail.star}}" fontSize="{{18}}" disabled /></view><text>{{schooldetail.star}}</text><view>全部点评</view><image src='../../img/arrow.png' mode='widthFix'></image></view>
+    <view class='location' bindtap='gomap'><image src='../../img/locationicon.png' mode='widthFix'></image><view>广东省佛山市禅城区123123</view><text>{{schooldetail.schoolDetail.distance}}km</text><image src='../../img/arrow.png' mode='widthFix'></image></view>
+    <view class='jianjie' bindtap='gorichschool'><view>{{schooldetail.schoolDetail.schoolBrief}}</view><text>全部简介</text><image src='../../img/arrow.png' mode='widthFix'></image></view>
+    <view class='star' bindtap='goevaluate'><view><wux-rater slot="footer" value="{{schooldetail.star}}" fontSize="{{18}}" disabled controlled="true" /></view><text>{{schooldetail.star}}</text><view>全部点评</view><image src='../../img/arrow.png' mode='widthFix'></image></view>
     <view class='showclass' bindtap='goallsubject'><view>开设班型</view><text>更多班型</text><image src='../../img/arrow.png' mode='widthFix'></image></view>
     <view class='allclass'>
       <view bindtap='goenlist' wx:for="{{schooldetail.schoolSubject}}" wx:for-index="index" wx:key="item" wx:if="{{index < 3}}" data-subjectId="{{item.signUpSubjectId}}"><view class='{{item.type == "交通类"?"classtype1":""}} {{item.type == "安监类"?"classtype2":""}}'>{{item.type}}</view><view>{{item.signSubjectName}}</view><text class='{{item.type == "交通类"?"classtype1":""}} {{item.type == "安监类"?"classtype2":""}}'>¥</text><text class='{{item.type == "交通类"?"classtype1":""}} {{item.type == "安监类"?"classtype2":""}}'>{{item.subjectPrice}}</text><image src='../../img/arrow1.png' mode='widthFix'></image></view>
@@ -18,7 +18,7 @@
 <view class='consultation' bindtap='consulation'>咨询</view>
 <view class='mask {{maskshow?"maskshow":""}}'>
   <view>
-    <view>1881412928</view>
+    <view>{{schooldetail.schoolDetail.schoolPhone}}</view>
     <view>
         <view bindtap='cancel'>取消</view>
         <view bindtap='makecall'>呼叫</view>

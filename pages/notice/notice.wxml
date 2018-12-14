@@ -1,9 +1,15 @@
 <!--pages/notice/notice.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
 <view class='notice'>
     <view class='notice-nav'>
     <view data-id="1" bindtap='changenotice'><view class='{{noticeId == 1?"ischoose1":""}}'>报名条件</view><view class='{{noticeId == 1?"ischoose":""}}'></view></view>
      <view data-id="2" bindtap='changenotice'><view class='{{noticeId == 2?"ischoose1":""}}'>报名资料</view><view class='{{noticeId == 2?"ischoose":""}}'></view></view>
       <view data-id="3" bindtap='changenotice'><view class='{{noticeId == 3?"ischoose1":""}}'>选择学校</view><view class='{{noticeId == 3?"ischoose":""}}'></view></view>
        <view data-id="4" bindtap='changenotice'><view class='{{noticeId == 4?"ischoose1":""}}'>考试内容</view><view class='{{noticeId == 4?"ischoose":""}}'></view></view>
+    </view>
+    <view class='notice-main'>
+        <view class='imgbox'></view>
+        <view class='title'>{{currentdata.title}}</view>
+        <view class='content'><template is="wxParse" data="{{wxParseData:article.nodes}}"/></view>
     </view>
 </view>

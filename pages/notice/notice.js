@@ -2,27 +2,17 @@
 import {
   _getNotice
 } from '../../utils/request.js'
+var WxParse = require('../../wxParse/wxParse.js');
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    noticedata: [
-      {
-        "id": 2,
-        "title": "报名资料哦",
-        "url": "撒旦发生发",
-        "content": "发生飞洒打法防守打法是"
-      },
-      {
-        "id": 1,
-        "title": "报名条件",
-        "url": "士大夫撒旦发生",
-        "content": "放大看是否就爱看洛杉矶发看到拉法基"
-      }
-    ],
-    noticeId:1
+    noticedata: [],
+    noticeId:1,
+    currentdata:{}
 
   },
 
@@ -30,9 +20,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // _getNotice().then(data =>{
-    //     console.log(data);
-    // })
+    _getNotice({type:1}).then(data =>{
+        // console.log(data);
+        this.setData({
+          noticedata : data.data,
+        })
+        data.data.forEach((item,index) => {
+            if(item.id == 1){
+              var article = item.content;
+              WxParse.wxParse('article', 'html', article, this, 0);
+              this.setData({
+                currentdata : item
+              })
+              return;
+            }
+        })
+    })
   },
 
   /**
@@ -86,6 +89,16 @@ Page({
   changenotice(e){
         this.setData({
           noticeId : e.currentTarget.dataset.id
+        })
+        this.data.noticedata.forEach((item,index) => {
+            if(item.id == e.currentTarget.dataset.id){
+              var article = item.content;
+              WxParse.wxParse('article', 'html', article, this, 0);
+                  this.setData({
+                    currentdata : item
+                  })
+                  return ;
+            }
         })
     }
 })

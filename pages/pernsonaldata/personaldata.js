@@ -54,7 +54,9 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    var pages = getCurrentPages();
+    var prePage = pages[pages.length - 2];
+    prePage.onLoad();
   },
 
   /**
@@ -119,7 +121,7 @@ Page({
     if(item != ''){
         switch(index){
           case 0:
-            data1.username = item;
+            data1.userName = item;
           break;
           case 1:
             data1.phone = item;

@@ -8,7 +8,7 @@
        <view data-id="4" bindtap='changenotice'><view class='{{noticeId == 4?"ischoose1":""}}'>考试内容</view><view class='{{noticeId == 4?"ischoose":""}}'></view></view>
     </view>
     <view class='notice-main'>
-        <view class='imgbox'></view>
+        <view class='imgbox'><image src='{{currentdata.url}}' mode='Fixwidth'></image></view>
         <view class='title'>{{currentdata.title}}</view>
         <view class='content'><template is="wxParse" data="{{wxParseData:article.nodes}}"/></view>
     </view>

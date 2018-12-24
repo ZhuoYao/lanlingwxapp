@@ -37,6 +37,7 @@ Page({
       this.setData({
         swiperdata: a
       })
+      // console.log(this.data.swiperdata);
     })
   },
 

@@ -47,6 +47,10 @@ page{
   margin: 0 auto;
   width: 650rpx;
   height: 300rpx;
+  background-color: #358AFF;
+}
+.notice-main .imgbox image{
+  width: 100%;
 }
 .notice-main .title{
   padding:26rpx 0  31rpx 48rpx;

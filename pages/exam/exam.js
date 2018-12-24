@@ -276,7 +276,9 @@ Page({
       subjectId: 14,
       examId: this.data.examId
     }).then(data => {
-      
+      wx.navigateTo({
+        url: '../score/score?sumExamMinute=' + data.data.sumExamMinute + '&maxScore=' + data.data.maxScore + '&totalScore=' + data.data.totalScore,
+      })
     })
   }
 })

@@ -18,6 +18,9 @@
               </view>
           </view>
         </view>
+        <view class='answer' wx:if="{{ispush == 2}}">
+      <text decode="{{true}}">答案:&nbsp;&nbsp;</text>{{trueanswer}}
+      </view>
       </view>
       <view class='submit' bindtap='examsubmit'>确定</view>
       </view>

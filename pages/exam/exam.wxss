@@ -224,3 +224,7 @@ page {
     background-color: #358AFF;
     color: white;
 }
+.answer{
+  padding: 44rpx 40rpx;
+  font-size: 30rpx;
+}

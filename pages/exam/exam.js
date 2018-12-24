@@ -25,7 +25,8 @@ Page({
     heading: '',
     examlist: [],
     remainExamSecond: '',
-    studentAnswer: 'A'
+    studentAnswer: 'A',
+    trueanswer:''
   },
 
   /**
@@ -44,7 +45,8 @@ Page({
       exammenu: app.globalData.exammenu,
       heading: options.heading==''? options.heading:'',
       examlist: list,
-      studentAnswer: app.globalData.currentOptions.studentAnswer
+      studentAnswer: app.globalData.currentOptions.studentAnswer,
+      trueanswer: app.globalData.currentOptions.trueAnswer
     })
     if (this.data.ispush == 1) {
       this.setData({
@@ -171,7 +173,8 @@ Page({
         list.push(data.data);
         this.setData({
           examinfo: data.data,
-          examlist: list
+          examlist: list,
+          trueanswer: data.data.trueAnswer
         })
         this.examdatareset(this.data.examinfo);
         wx.hideLoading();
@@ -237,8 +240,10 @@ Page({
           list.push(data.data);
           this.setData({
             examinfo: data.data,
-            examlist: list
+            examlist: list,
+            trueanswer: data.data.trueAnswer
           })
+          console.log(this.data.trueanswer);
           this.examdatareset(this.data.examinfo);
           wx.hideLoading();
         })

@@ -32,7 +32,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    // console.log(options);
+    console.log(options);
     let list = [];
     list.push(app.globalData.currentOptions);
     this.setData({
@@ -42,7 +42,7 @@ Page({
       isCollection: app.globalData.currentOptions.isCollection,
       allnum: app.globalData.exammenu.length,
       exammenu: app.globalData.exammenu,
-      heading: options.heading,
+      heading: options.heading==''? options.heading:'',
       examlist: list,
       studentAnswer: app.globalData.currentOptions.studentAnswer
     })

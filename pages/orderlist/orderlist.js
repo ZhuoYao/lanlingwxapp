@@ -6,32 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-      orderlist:[
-        {
-          "payMoney": 1000,
-          "id": 12,
-          "state": 2,
-          "type": 1,
-          "subjectName": "熔化焊接与热切割作业 - 初训",
-          "isEvaluate": "1"
-        },
-        {
-          "payMoney": 1000,
-          "id": 12,
-          "state": 2,
-          "type": 2,
-          "subjectName": "熔化焊接与热切割作业 - 初训",
-          "isEvaluate": "1"
-        },
-        {
-          "payMoney": 1000,
-          "id": 12,
-          "state": 2,
-          "type": 3,
-          "subjectName": "熔化焊接与热切割作业 - 初训",
-          "isEvaluate": "1"
-        }
-      ]
+      orderlist:[]
   },
 
   /**
@@ -39,7 +14,10 @@ Page({
    */
   onLoad: function (options) {
     _getOrderList().then(data => {
-      console.log(data);
+      // console.log(data);
+      this.setData({
+        orderlist : data.data
+      })
     })
   },
 

@@ -13,6 +13,11 @@ App({
         _this.globalData.token = res.data 
       },
       fail : function(error){
+        _this.globalData.token = '';
+        wx.navigateTo({
+          url: '/pages/login/login',
+        })
+        wx.hideLoading();
         console.log(error);
       }
     })

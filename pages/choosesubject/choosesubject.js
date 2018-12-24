@@ -102,6 +102,7 @@ Page({
     })
   },
   test(data) {
+    if(data.length > 0){
     let data1 = data;
     let data2 = [];
     let currentdata = {
@@ -148,6 +149,7 @@ Page({
     this.setData({
       subjectdata: data2
     })
+    }
     }
   },
   cancellock(e) {
@@ -238,5 +240,21 @@ Page({
     wx.reLaunch({
       url: '../signup/signup',
     })
+  },
+  cancelinput(e){
+    if(this.data.searchtext != ''){
+    this.setData({
+      searchtext: ''
+    })
+    if(this.data.type == 1){
+    _getXSubjectList().then(data => {
+      this.test(data.data);
+    })
+    }else{
+      _getSignUpSubjectId({ type: this.data.category }).then(data => {
+        this.test(data.data);
+      })
+    }
+    }
   }
 })

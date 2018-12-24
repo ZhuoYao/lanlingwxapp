@@ -15,13 +15,13 @@
 </view>
 <swiper indicator-dots="{{indicatorDots}}"
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-  <block wx:for="{{swiperdata}}" wx:key="item">
-    <swiper-item>
-      <image src="{{item}}" class="slide-image"/>
+  <block wx:for="{{swiperdata}}" wx:key="item" wx:for-index="index">
+    <swiper-item data-link="{{item.link}}">
+      <image src="{{item.url}}" class="slide-image"/>
     </swiper-item>
   </block>
 </swiper>
-  <view class='sign-up' bindtap='gosignup'></view>
+  <view class='sign-up' bindtap='gosignup'><image src='https://yunduanchuangyi.oss-cn-shenzhen.aliyuncs.com/lanling/yijian/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20181224113030.png' mode='widthFix'></image></view>
   <view class='school' id="school">
   <view class='screen {{menufix?"menufix":""}}' bindtap='showchoosetype'><view>更多</view> <image src='../../img/arrow.png' mode='widthFix'></image> </view>
    <!-- <wux-rater slot="footer" default-value="{{ 3.7 }}" fontSize="{{20}}" disabled /> -->

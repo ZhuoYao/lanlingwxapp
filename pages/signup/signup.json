@@ -2,5 +2,6 @@
   "usingComponents": {
     "bottom-nav": "../bottomnav/bottomnav",
     "wux-rater": "../rater/index"
-  }
+  },
+  "navigationBarTitleText": "报名"
 }

@@ -1,4 +1,5 @@
 // pages/evaluate/evaluate.js
+import { _evaluateSubject} from '../../utils/request.js'
 Page({
 
   /**
@@ -9,6 +10,8 @@ Page({
     value2: 0,
     value3: 0,
     value4: 0,
+    isname: 0,
+    content:''
   },
 
   /**
@@ -43,7 +46,9 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function() {
-
+    let page = getCurrentPages();
+    let lastpage = page[page.length - 2];
+    lastpage.onLoad();
   },
 
   /**
@@ -71,22 +76,22 @@ Page({
     switch (e.currentTarget.dataset.id) {
       case '1':
         this.setData({
-          value1: e.detail.value
+          value1: parseFloat(e.detail.value)
         })
         break;
       case '2':
         this.setData({
-          value2: e.detail.value
+          value2: parseFloat(e.detail.value)
         })
         break;
       case '3':
         this.setData({
-          value3: e.detail.value
+          value3: parseFloat(e.detail.value)
         })
         break;
       case '4':
         this.setData({
-          value4: e.detail.value
+          value4: parseFloat(e.detail.value)
         })
         break;
     }
@@ -94,5 +99,34 @@ Page({
   },
   switchChange(e){
     console.log(e);
+    if(e.detail.value){
+      this.setData({
+        isname : 1
+      })
+    }else{
+      this.setData({
+        isname: 0
+      })
+    }
+  },
+  getcontent(e){
+     this.setData({
+       content: e.detail.value
+     })
+  },
+  submit(e){
+    // console.log(this.data)
+  _evaluateSubject({
+    serverStar :this.data.value1,
+    payStar : this.data.value2,
+    teachStar : this.data.value3,
+    envStar : this.data.value4,
+    contentDesc: this.data.content,
+    isName : this.data.isname
+  }).then(data => {
+    wx.navigateBack({
+      delta: 1
+    })
+  })
   }
 })

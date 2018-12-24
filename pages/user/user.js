@@ -8,7 +8,8 @@ Page({
    */
   data: {
       userdata:'',
-      bindschool:''
+      bindschool:'',
+      islogin:false
   },
 
   /**
@@ -18,7 +19,8 @@ Page({
     _getCenterInfo().then(data => {
         // console.log(data);
         this.setData({
-          userdata : data.data
+          userdata : data.data,
+          islogin : true
         })
         console.log(this.data.userdata);
       })
@@ -94,14 +96,26 @@ Page({
     })
   },
   goorder(e){
+    if(app.globalData.token){
     wx.navigateTo({
       url: '../orderlist/orderlist',
     })
+    }else{
+      wx.navigateTo({
+        url: '../login/login',
+      })
+    }
   },
   gomycard(e){
+    if (app.globalData.token){
     wx.navigateTo({
       url: '../mycard/mycard',
     })
+    }else{
+      wx.navigateTo({
+        url: '../login/login',
+      })
+    }
   },
   gosign(e){
     wx.redirectTo({

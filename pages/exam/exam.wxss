@@ -69,7 +69,7 @@ page {
 }
 
 .exam .exam-content-optins >view >view:last-child {
-  padding-top: 20rpx;
+  padding: 20rpx 0rpx;
   width: 490rpx;
   word-break: break-all;
   word-wrap: break-word;

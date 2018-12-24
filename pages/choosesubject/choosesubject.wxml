@@ -3,9 +3,9 @@
   <view class='searchsubject {{type == 1?"":"type2"}}'>
       <view class='search'>
         <view><image src='../../img/search.png'></image>
-        <input placeholder="输入科目" bindinput='search'></input>
+        <input placeholder="输入科目" bindinput='search' value='{{searchtext}}'></input>
         </view>
-        <view>取消</view>
+        <view bindtap='cancelinput'>取消</view>
       </view>
       <view class='search-text' wx:if="{{type == 1}}">
         <view>当前科目</view>

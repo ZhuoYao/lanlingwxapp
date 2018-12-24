@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "wux-rater": "../rater/index"
-  }
+  },
+  "navigationBarTextStyle": "评价订单"
 }

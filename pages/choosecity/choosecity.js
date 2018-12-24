@@ -81,6 +81,7 @@ Page({
     })
   },
   test(data) {
+    if(data.length > 0){
     let data1 = data;
     let data2 = [];
     let currentdata = {
@@ -115,6 +116,7 @@ Page({
     this.setData({
       citydata: data2
     })
+    }
   },
   choosecity(e){
       // console.log(e.currentTarget.dataset.city);

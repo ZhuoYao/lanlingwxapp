@@ -1,13 +1,13 @@
 // pages/index1/main.js
 const app = getApp();
-import { _getQuestionList} from '../../utils/request.js';
+import { _getQuestionList, _getAd} from '../../utils/request.js';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    swiperdata: ['https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542609906222&di=57df3b29facfb145563395fb1d58f256&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201501%2F02%2F20150102204647_dj2t8.jpeg','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542609906222&di=57df3b29facfb145563395fb1d58f256&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201501%2F02%2F20150102204647_dj2t8.jpeg'],
+    swiperdata: [],
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
@@ -22,12 +22,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(app.globalData)
+    // console.log(app.globalData)
       this.setData({
         categoryindex: app.globalData.category,
         subjectName: app.globalData.subjectName,
         subjectId : app.globalData.subjectId
       })
+    _getAd({ adPositionId: 2 }).then(data => {
+      console.log(data);
+      let a = [];
+      data.data.forEach((item, index) => {
+        a.push({ url: item.imageUrl, link: item.link });
+      })
+      this.setData({
+        swiperdata: a
+      })
+    })
   },
 
   /**
@@ -178,7 +188,7 @@ Page({
   },
   goscore(){
     wx.navigateTo({
-      url: '../score/score',
+      url: '../examrecord/examrecord',
     })
   },
   choosesubject1(){

@@ -22,7 +22,7 @@ Component({
    */
   methods: {
     gopage: function(e){
-      console.log(e);
+      // console.log(e);
       switch(e.currentTarget.dataset.index){
         case '0':
           wx.redirectTo({

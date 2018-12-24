@@ -1,5 +1,5 @@
-// const Globalurl = 'http://test.nataliee.top/lanling-api/api';
-const Globalurl = 'http://192.168.1.15:8081/lanling-api/api';
+const Globalurl = 'https://test.nataliee.top/lanling-api/api';
+// const Globalurl = 'http://192.168.1.15:8081/lanling-api/api';
 var app = getApp();
 var Token = app.globalData.token;
 const _SetToken = function(token) {
@@ -21,8 +21,17 @@ const _GetSubject = function(data) {
         "token": Token
       },
       success: res => {
-        console.log(res);
-        resolve(res);
+        if (res.data.code == 0) {
+          resolve(res.data);
+        } else {
+          if (res.data.code == 400) {
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          } else {
+            reject(res.data);
+          }
+        }
       }
     })
   })
@@ -63,10 +72,16 @@ const _getQuestionList = function(data) {
         "token": Token
       },
       success: res => {
-        if (res.data.code == 0) {
+         if (res.data.code == 0) {
           resolve(res.data);
         } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
           reject(res.data);
+          }
         }
       }
     })
@@ -87,10 +102,16 @@ const _recordAnswer = function(data) {
         "token": Token
       },
       success: res => {
-        if (res.data.code == 0) {
+         if (res.data.code == 0) {
           resolve(res.data);
         } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
           reject(res.data);
+          }
         }
       }
     })
@@ -111,10 +132,16 @@ const _insertCollection = function(data) {
         "token": Token
       },
       success: res => {
-        if (res.data.code == 0) {
+         if (res.data.code == 0) {
           resolve(res.data);
         } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
           reject(res.data);
+          }
         }
       }
     })
@@ -135,10 +162,16 @@ const _getExamInfo = function(data) {
         "token": Token
       },
       success: res => {
-        if (res.data.code == 0) {
+         if (res.data.code == 0) {
           resolve(res.data);
         } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
           reject(res.data);
+          }
         }
       }
     })
@@ -159,10 +192,16 @@ const _createExamPaper = function(data) {
         "token": Token
       },
       success: res => {
-        if (res.data.code == 0) {
+         if (res.data.code == 0) {
           resolve(res.data);
         } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
           reject(res.data);
+          }
         }
       }
     })
@@ -183,10 +222,16 @@ const _questionOneByOne = function(data) {
         "token": Token
       },
       success: res => {
-        if (res.data.code == 0) {
+         if (res.data.code == 0) {
           resolve(res.data);
         } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
           reject(res.data);
+          }
         }
       }
     })
@@ -207,10 +252,16 @@ const _questionState = function(data) {
         "token": Token
       },
       success: res => {
-        if (res.data.code == 0) {
+         if (res.data.code == 0) {
           resolve(res.data);
         } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
           reject(res.data);
+          }
         }
       }
     })
@@ -231,10 +282,16 @@ const _submitQuestion = function(data) {
         "token": Token
       },
       success: res => {
-        if (res.data.code == 0) {
+         if (res.data.code == 0) {
           resolve(res.data);
         } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
           reject(res.data);
+          }
         }
       }
     })
@@ -255,10 +312,16 @@ const _submitExam = function(data) {
         "token": Token
       },
       success: res => {
-        if (res.data.code == 0) {
+         if (res.data.code == 0) {
           resolve(res.data);
         } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
           reject(res.data);
+          }
         }
       }
     })
@@ -279,10 +342,16 @@ const _getExamList = function(data) {
         "token": Token
       },
       success: res => {
-        if (res.data.code == 0) {
+         if (res.data.code == 0) {
           resolve(res.data);
         } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
           reject(res.data);
+          }
         }
       }
     })
@@ -303,10 +372,16 @@ const _getXSubjectList = function(data) {
         "token": Token
       },
       success: res => {
-        if (res.data.code == 0) {
+         if (res.data.code == 0) {
           resolve(res.data);
         } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
           reject(res.data);
+          }
         }
       }
     })
@@ -327,10 +402,16 @@ const _getSchoolList = function(data) {
         "token": Token
       },
       success: res => {
-        if (res.data.code == 0) {
+         if (res.data.code == 0) {
           resolve(res.data);
         } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
           reject(res.data);
+          }
         }
       }
     })
@@ -380,10 +461,16 @@ const _signUpRecord = function(data) {
         "token": Token
       },
       success: res => {
-        if (res.data.code == 0) {
+         if (res.data.code == 0) {
           resolve(res.data);
         } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
           reject(res.data);
+          }
         }
       }
     })
@@ -404,10 +491,16 @@ const _getNotice = function(data) {
         "token": Token
       },
       success: res => {
-        if (res.data.code == 0) {
+         if (res.data.code == 0) {
           resolve(res.data);
         } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
           reject(res.data);
+          }
         }
       }
     })
@@ -428,10 +521,16 @@ const _getSchoolDetail = function(data) {
         "token": Token
       },
       success: res => {
-        if (res.data.code == 0) {
+         if (res.data.code == 0) {
           resolve(res.data);
         } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
           reject(res.data);
+          }
         }
       }
     })
@@ -452,10 +551,16 @@ const _getCity = function(data) {
         "token": Token
       },
       success: res => {
-        if (res.data.code == 0) {
+         if (res.data.code == 0) {
           resolve(res.data);
         } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
           reject(res.data);
+          }
         }
       }
     })
@@ -476,10 +581,16 @@ const _getSchoolEvaluate = function(data) {
         "token": Token
       },
       success: res => {
-        if (res.data.code == 0) {
+         if (res.data.code == 0) {
           resolve(res.data);
         } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
           reject(res.data);
+          }
         }
       }
     })
@@ -500,10 +611,16 @@ const _getSignUpSubjectId = function(data) {
         "token": Token
       },
       success: res => {
-        if (res.data.code == 0) {
+         if (res.data.code == 0) {
           resolve(res.data);
         } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
           reject(res.data);
+          }
         }
       }
     })
@@ -524,10 +641,16 @@ const _getCenterInfo = function(data){
         "token": Token
       },
       success: res => {
-        if (res.data.code == 0) {
+         if (res.data.code == 0) {
           resolve(res.data);
         } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
           reject(res.data);
+          }
         }
       }
     })
@@ -548,10 +671,16 @@ const _getOrderList = function(data){
         "token": Token
       },
       success: res => {
-        if (res.data.code == 0) {
+         if (res.data.code == 0) {
           resolve(res.data);
         } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
           reject(res.data);
+          }
         }
       }
     })
@@ -572,10 +701,16 @@ const _getHotCity =function(data){
         "token": Token
       },
       success: res => {
-        if (res.data.code == 0) {
+         if (res.data.code == 0) {
           resolve(res.data);
         } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
           reject(res.data);
+          }
         }
       }
     })
@@ -596,10 +731,16 @@ const _getCertificate = function(data){
         "token": Token
       },
       success: res => {
-        if (res.data.code == 0) {
+         if (res.data.code == 0) {
           resolve(res.data);
         } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
           reject(res.data);
+          }
         }
       }
     })
@@ -617,10 +758,16 @@ const _smsCode = function(data){
         "token": Token
       },
       success: res => {
-        if (res.data.code == 0) {
+         if (res.data.code == 0) {
           resolve(res.data);
         } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
           reject(res.data);
+          }
         }
       }
     })
@@ -663,10 +810,16 @@ const _getRelatedSchool = function(data){
         "token": Token
       },
       success: res => {
-        if (res.data.code == 0) {
+         if (res.data.code == 0) {
           resolve(res.data);
         } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
           reject(res.data);
+          }
         }
       }
     })
@@ -687,10 +840,76 @@ const _setCenterInfo = function(data){
         "token": Token
       },
       success: res => {
+         if (res.data.code == 0) {
+          resolve(res.data);
+        } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
+          reject(res.data);
+          }
+        }
+      }
+    })
+  })
+}
+
+const _evaluateSubject = function(data){
+  if (app.globalData.token != '' && Token == '') {
+    _SetToken(app.globalData.token);
+  }
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: `${Globalurl}/student/evaluateSubject`,
+      data: data,
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "token": Token
+      },
+      success: res => {
+         if (res.data.code == 0) {
+          resolve(res.data);
+        } else {
+          if(res.data.code == 400){
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          }else{
+          reject(res.data);
+          }
+        }
+      }
+    })
+  })
+}
+
+const _getAd = function(data){
+  if (app.globalData.token != '' && Token == '') {
+    _SetToken(app.globalData.token);
+  }
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: `${Globalurl}/ad/getAd`,
+      data: data,
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "token": Token
+      },
+      success: res => {
         if (res.data.code == 0) {
           resolve(res.data);
         } else {
-          reject(res.data);
+          if (res.data.code == 400) {
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          } else {
+            reject(res.data);
+          }
         }
       }
     })
@@ -727,5 +946,7 @@ module.exports = {
   _smsCode,
   _XLogin,
   _getRelatedSchool,
-  _setCenterInfo
+  _setCenterInfo,
+  _evaluateSubject,
+  _getAd
 }

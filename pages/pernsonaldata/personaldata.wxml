@@ -4,7 +4,7 @@
   <view class='person'><view>昵称</view><input placeholder='{{userdata.username?userdata.username:"请输入昵称"}}' bindinput='changename'></input></view>
    <view class='person'><view>手机号码</view><input placeholder='{{userdata.mobile?userdata.mobile:"请输入手机号码"}}' bindinput='changephone'></input></view>
     <view class='person'><view>身份证号</view><input placeholder='{{userdata.idCard?userdata.idCard:"请输入身份证号"}}' bindinput='changeidcard'></input></view>
-     <view class='person'><view>真实姓名</view><input placeholder='{{userdata.realname?userdata.realname:"请输入真实姓名"}}}' bindinput='changename1'></input></view>
+     <view class='person'><view>真实姓名</view><input placeholder='{{userdata.realname?userdata.realname:"请输入真实姓名"}}' bindinput='changename1'></input></view>
      <view class='person'><picker bindchange="bindPickerChange" value="{{sextype}}" range="{{array}}">
     <view class="picker">
     <view>性别</view><text>{{array[sextype]}}</text>

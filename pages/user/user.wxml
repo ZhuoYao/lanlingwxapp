@@ -2,12 +2,12 @@
 <view class='user'>
     <view class='user-icon' bindtap='goperson'>
     <view>
-      <image src='../../img/usericon.png' wx:if="{{!userdata.username}}"></image>
+      <image src='../../img/usericon.png' wx:if="{{!islogin}}"></image>
       <image wx:else src='{{userdata.imgUrl}}'></image>
       <view>
-        <view wx:if="{{userdata.username}}">{{userdata.username}}</view>
+        <view wx:if="{{islogin}}">{{userdata.username}}</view>
         <view wx:else>未登录</view>
-        <view wx:if="{{userdata.username}}">查看个人主页或编辑资料</view>
+        <view wx:if="{{islogin}}">查看个人主页或编辑资料</view>
         <view wx:else>点击登录账号</view>
       </view>
       <image src='../../img/arrow.png' mode="widthFix"></image>

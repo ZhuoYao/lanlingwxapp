@@ -21,12 +21,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-      _login().then(data => {
-      console.log(data);
-        wx.navigateBack({
-          delta: 1
-        })
-    })
+    //   _login().then(data => {
+    //   console.log(data);
+    //     wx.navigateBack({
+    //       delta: 1
+    //     })
+    // })
   },
 
   /**
@@ -83,6 +83,10 @@ Page({
     // this.getsecond()
     _smsCode({phone:this.data.phone}).then(data => {
       this.getsecond();
+      wx.showToast({
+        title: data.msg,
+        duration: 3000
+      })
     },error =>{
       wx.showToast({
         title: error.msg,

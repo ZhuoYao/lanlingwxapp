@@ -32,5 +32,6 @@
       <view><button open-type='feedback'><image src='../../img/opinionicon.png' mode="widthFix"></image><view>意见反馈</view><image src='../../img/arrow.png' mode="widthFix"></image></button></view>
       <view bindtap='goaboutus'><image src='../../img/aboutusicon.png' mode="widthFix"></image><view>关于我们</view><image src='../../img/arrow.png' mode="widthFix"></image></view>
     </view>
+    <view bindtap='logout' class='logout'>退出登录</view>
 <bottom-nav nav-index='2'></bottom-nav>
 </view>

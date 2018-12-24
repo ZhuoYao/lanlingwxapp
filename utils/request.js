@@ -643,14 +643,8 @@ const _getCenterInfo = function(data){
       success: res => {
          if (res.data.code == 0) {
           resolve(res.data);
-        } else {
-          if(res.data.code == 400){
-            wx.navigateTo({
-              url: '../login/login',
-            })
-          }else{
+        } else {         
           reject(res.data);
-          }
         }
       }
     })
@@ -813,13 +807,7 @@ const _getRelatedSchool = function(data){
          if (res.data.code == 0) {
           resolve(res.data);
         } else {
-          if(res.data.code == 400){
-            wx.navigateTo({
-              url: '../login/login',
-            })
-          }else{
           reject(res.data);
-          }
         }
       }
     })
@@ -916,6 +904,31 @@ const _getAd = function(data){
   })
 }
 
+const _logout = function(data){
+  if (app.globalData.token != '' && Token == '') {
+    _SetToken(app.globalData.token);
+  }
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: `${Globalurl}/student/logout`,
+      data: data,
+      method: 'POST',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "token": Token
+      },
+      success: res => {
+        if (res.data.code == 0) {
+          resolve(res.data);
+          _SetToken('');
+        } else {          
+            reject(res.data);
+        }
+      }
+    })
+  })
+}
+
 module.exports = {
   _SetToken,
   _GetSubject,
@@ -948,5 +961,6 @@ module.exports = {
   _getRelatedSchool,
   _setCenterInfo,
   _evaluateSubject,
-  _getAd
+  _getAd,
+  _logout
 }

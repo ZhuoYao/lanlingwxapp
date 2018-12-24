@@ -1,5 +1,5 @@
 // pages/user/user.js
-import { _getCenterInfo, _getRelatedSchool} from '../../utils/request.js'
+import { _getCenterInfo, _getRelatedSchool, _logout} from '../../utils/request.js'
 var app = getApp();
 Page({
 
@@ -130,6 +130,15 @@ Page({
   goaboutus(e){
     wx.navigateTo({
       url: '../aboutus/aboutus',
+    })
+  },
+  logout(e){
+    _logout().then(data => {
+      this.setData({
+        userdata: '',
+        bindschool:'',
+        islogin: false
+      })
     })
   }
 })

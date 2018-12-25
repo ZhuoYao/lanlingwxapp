@@ -1,5 +1,5 @@
 const Globalurl = 'https://test.nataliee.top/lanling-api/api';
-// const Globalurl = 'http://192.168.1.15:8081/lanling-api/api';
+// const Globalurl = 'http://192.168.1.4:8081/lanling-api/api';
 var app = getApp();
 var Token = app.globalData.token;
 const _SetToken = function(token) {

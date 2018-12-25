@@ -127,7 +127,7 @@ Page({
             data1.phone = item;
           break;
           case 2:
-            data1.idcard = item;
+            data1.idCard = item;
           break;
           case 3:
             data1.realName = item;
@@ -143,6 +143,11 @@ Page({
       // console.log(data);
       wx.navigateBack({
         delta :1
+      })
+    },error => {
+      wx.showToast({
+        title: error.msg,
+        icon:'none'
       })
     })
   }

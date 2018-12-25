@@ -30,6 +30,11 @@ Page({
       this.setData({
         examdata: data.data
       })
+    },error => {
+      wx.showToast({
+        title: '该题库无可用试卷',
+        icon:'none'
+      })
     })
   },
 

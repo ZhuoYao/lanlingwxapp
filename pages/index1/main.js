@@ -164,14 +164,38 @@ Page({
         })
       break;
       case '3' :
-      wx.navigateTo({
-        url: '../collectionmenu/collectionmenu?type=1'
-      })
+        wx.showToast({
+          title: '加载中',
+          icon: 'loading',
+          mask: true,
+          duration: 10000,
+          success: () => {
+          }
+        })
+        _getQuestionList({ subjectId: 14, exercisesType: 3, sort: 1, state: 2, type:1}).then(data => {
+          app.setcurrentOptions(data.data.questionInfo);
+          wx.hideToast();
+          wx.navigateTo({
+            url: '../practice/practice?type=3&subjectId=14'
+          })
+        })
       break;
       case '4':
-      wx.navigateTo({
-        url: '../collectionmenu/collectionmenu?type=2'
-      })
+        wx.showToast({
+          title: '加载中',
+          icon: 'loading',
+          mask: true,
+          duration: 10000,
+          success: () => {
+          }
+        })
+        _getQuestionList({ subjectId: 14, exercisesType: 3, sort: 1, state: 2, type: 2 }).then(data => {
+          app.setcurrentOptions(data.data.questionInfo);
+          wx.hideToast();
+          wx.navigateTo({
+            url: '../practice/practice?type=4&subjectId=14'
+          })
+        })
       break;
     }
     }

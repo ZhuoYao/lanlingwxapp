@@ -4,7 +4,7 @@
     <view class='scoreimg'>
       <image src='../../img/goexamscore.png'></image>
     </view>
-    <view class='score'>75</view>
+    <view class='score'>0</view>
     <view class='lastscore'>上次成绩</view>
     <view class='exdata-main'>
       <view class='exdata-main-data'><view>考试科目</view><view>{{examdata.examName}}</view></view>
